@@ -1,4 +1,0 @@
-baseURL = 'https://hrtywhy.github.io/'
-languageCode = 'en-us'
-title = 'hrtywhy notes'
-theme = 'hugo-theme-stack'
