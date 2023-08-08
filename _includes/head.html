@@ -1,0 +1,50 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="monetization" content="$ilp.uphold.com/URb37hnk6Prd">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}'>
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600%7CPoppins:400,600,700&display=swap" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <!-- Twitter cards -->
+    <meta name="twitter:site"    content="@{{ site.twitter_username }}">
+    <meta name="twitter:creator" content="@{{ site.author.name }}">
+    <meta name="twitter:title"   content="{{ page.title }}">
+
+    {% if page.summary %}
+    <meta name="twitter:description" content="{{ page.summary }}">
+    {% else %}
+    <meta name="twitter:description" content="{{ page.content | strip_html | truncate: 85 }}">
+    {% endif %}
+
+    {% if page.image %}
+    <meta name="twitter:card"  content="summary_large_image">
+    <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+    {% else %}
+    <meta name="twitter:card"  content="summary">
+    <meta name="twitter:image" content="{{ site.hero.image }}">
+    {% endif %}
+  <!-- end of Twitter cards -->
+
+  {% if site.tags != "" %}
+    {% include collecttags.html %}
+  {% endif %}
+
+  <style>
+  {% capture include_to_scssify %}
+    {% include main.scss %}
+  {% endcapture %}
+  {{ include_to_scssify | scssify }}
+  </style>
+</head>
