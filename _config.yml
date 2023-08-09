@@ -11,7 +11,7 @@ url: "https://sunnya97.com" # The base hostname & protocol for your site, e.g. h
 # Author Settings
 author:
   name: Hartoyo Wahyu
-  avatar: '/images/profiles/profile.jpg'
+  avatar: '/images/profiles/profile.jpeg'
 
 
 #-------------------------------
@@ -19,7 +19,7 @@ author:
 hero:
   title: Hartoyo Wahyu
   description: Detection Engineering & Threat Hunter.
-  image: '/images/profiles/profile.jpg'
+  image: '/images/profiles/profile.jpeg'
 
 
 #-------------------------------
