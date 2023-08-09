@@ -24,8 +24,8 @@ hero:
 
 #-------------------------------
 # Contact Settings
-contact:
-  email: presidentpalsu@gmail.com # Add your email for contant form
+# contact:
+ # email: presidentpalsu@gmail.com # Add your email for contant form
   # description: 
 
 # NOTE
@@ -40,8 +40,6 @@ social:
 - {icon: "ion-logo-twitter", link: "https://twitter.com/aibonaddct"}
 - {icon: "ion ion-logo-github", link: "https://github.com/hrtywhy"}
 - {icon: "ion ion-logo-linkedin", link: "https://www.linkedin.com/in/hrtywhy/"}
-- {icon: "ion ion-logo-medium", link: "https://hrtywhy.medium.com/"}
-
 
 
 #-------------------------------
