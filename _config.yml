@@ -10,14 +10,14 @@ url: "https://sunnya97.com" # The base hostname & protocol for your site, e.g. h
 #-------------------------------
 # Author Settings
 author:
-  name: Sunny Aggarwal
+  name: Hartoyo Wahyu
   avatar: '/images/profiles/pirate_sunny.jpg'
 
 
 #-------------------------------
 # Hero Settings
 hero:
-  title: Sunny Aggarwal
+  title: Hartoyo Wahyu
   description: Thoughts, stories and ideas.
   image: '/images/profiles/pirate_sunny_hero.jpg'
 
