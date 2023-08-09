@@ -1,24 +1,9 @@
-# Aditu
+## Personal Documentation
 
-Aditu is a stylish and modern dark theme with a clean and unique design, this theme is created for those who want to share their stories quickly and easily, as well as provide your readers with an unforgettable experience of viewing content.
+Repository ini digunakan sebagai dokumentasi pribadi atau hanya sekedar catatan baik diwaktu luang, research atau project dari setiap pembelajaran yang saya lakukan.
 
-* * *
-
-### Demo
-
-Check the theme in action [Demo](https://aditu.netlify.com/)
-
-* * *
-
-### Deployment
-
-To run the theme locally, navigate to the theme directory and run `bundle install` to install the dependencies, then run `bundle exec jekyll serve` to start the Jekyll server.
-
-I would recommend checking the [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
-
-
-* * *
-
-### Documentation
-
-Before using the Aditu theme, please read the attached documentation.
+<p> Berkata Al-‘Allamah ahli fiqih abad ini.<br>
+Al-Imam Muhammad bin Shalih al-‘Utsaimin rahimahullah:
+"Jika seorang penanya bertanya, apakah lupa itu mempunyai obat atau penyembuh?
+Maka kami katakan:
+"Ya, lupa itu ada obatnya-dengan karunia dari Allah-yakni dengan mencatat. Oleh karena itu Allah memberi nikmat pada para hamba-Nya dengan hal itu (mencatat)." </p>

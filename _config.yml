@@ -11,7 +11,7 @@ url: "https://sunnya97.com" # The base hostname & protocol for your site, e.g. h
 # Author Settings
 author:
   name: Hartoyo Wahyu
-  avatar: '/images/profiles/pirate_sunny.jpg'
+  avatar: '/images/profiles/profile.jpg'
 
 
 #-------------------------------
@@ -19,13 +19,13 @@ author:
 hero:
   title: Hartoyo Wahyu
   description: Thoughts, stories and ideas.
-  image: '/images/profiles/pirate_sunny_hero.jpg'
+  image: '/images/profiles/profile.jpg'
 
 
 #-------------------------------
 # Contact Settings
 contact:
-  email: sunnya97@gmail.com # Add your email for contant form
+  email: presidentpalsu@gmail.com # Add your email for contant form
   # description: 
 
 # NOTE
@@ -37,14 +37,12 @@ contact:
 # Example of adding a new link to the footer - {icon: "ion-logo-github", link: "https://github.com"}
 # Other icons can be found at https://ionicons.com
 social:
-- {icon: "ion-logo-twitter", link: "https://twitter.com/sunnya97"}
-- {icon: "ion ion-logo-github", link: "https://github.com/sunnya97"}
-- {icon: "ion ion-logo-linkedin", link: "https://linkedin.com/in/sunnya97"}
-- {icon: "ion ion-logo-youtube", link: "https://youtube.com/sunnya97"}
-- {icon: "ion ion-md-headset", link: "https://conspirat.us"}
+- {icon: "ion-logo-twitter", link: "https://twitter.com/aibonaddct"}
+- {icon: "ion ion-logo-github", link: "https://github.com/hrtywhy"}
+- {icon: "ion ion-logo-linkedin", link: "https://www.linkedin.com/in/hrtywhy/"}
+- {icon: "ion ion-logo-medium", link: "https://hrtywhy.medium.com/"}
 
 
-twitter-username: sunnya97
 
 #-------------------------------
 # Comment Section (Disqus)
