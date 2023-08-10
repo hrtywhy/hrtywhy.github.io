@@ -18,5 +18,7 @@ Securely yours,
 
 Hartoyo Wahyu
 
+<br>
+<br>
 
 >bagi saya "semangat belajar" lah, hal yg paling mahal. ketika kita punya banyak uang dan waktu, tapi semangat belajar kita sudah hilang tiada lagi, semua rasanya seperti tidak berguna.
