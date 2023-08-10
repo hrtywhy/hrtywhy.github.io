@@ -12,7 +12,6 @@ Let's bridge the gap between the cyber experts and the curious learners, fosteri
 
 There's always more beyond what meets the eye, just like there are more layers in the sky above. Therefore, what I'm writing here might not hold any immediate significance for my fellow readers who are taking the time to read this lil snippet. Nevertheless, the key point is that we can all learn from and share with each other. I firmly believe that knowledge becomes a blessing when it's shared to enlighten others.
 
-<br>
 
 Securely yours,
 
