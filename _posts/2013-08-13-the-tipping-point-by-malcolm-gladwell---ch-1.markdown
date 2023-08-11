@@ -3,10 +3,11 @@ layout:	post
 title:	"The Tipping Point by Malcolm Gladwell — Ch 1"
 date:	2013-08-13
 tags: Literary
-image: /images/medium/3jpeg
+image: '/images/medium/3.jpeg'
+imagehero: true
 ---
 
-> “Ada lilin di dalam hati Anda, siap untuk dinyalakan. Ada kekosongan dalam jiwa Anda, siap untuk diisi.”
+> Ada lilin di dalam hati Anda, siap untuk dinyalakan. Ada kekosongan dalam jiwa Anda, siap untuk diisi.”
 > 
 > — Kang Gorengan
 
