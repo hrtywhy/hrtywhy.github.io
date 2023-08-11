@@ -1,8 +1,8 @@
 ---
 layout:	post
 title:	"Welcome!"
-date:	2013-06-30
-image:  '/images/medium/1*v2xjXHMjVL1h_LBmix5djA.jpeg'
+date:	2023-08-11
+image:  '/images/medium/1.jpg'
 imagehero: true
 ---
 
