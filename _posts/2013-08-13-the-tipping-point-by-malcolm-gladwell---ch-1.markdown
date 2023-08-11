@@ -2,7 +2,7 @@
 layout:	post
 title:	"Threat Attribution"
 date:	2023-08-11
-tags: Write Up
+tags: Write-Up
 image: '/images/medium/3.jpg'
 imagehero: true
 ---
