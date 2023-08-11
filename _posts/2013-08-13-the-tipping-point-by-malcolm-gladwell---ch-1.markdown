@@ -1,9 +1,9 @@
 ---
 layout:	post
-title:	"The Tipping Point by Malcolm Gladwell — Ch 1"
-date:	2013-08-13
-tags: Literary
-image: '/images/medium/3.jpeg'
+title:	"Threat Attribution"
+date:	2023-08-11
+tags: Write Up
+image: '/images/medium/3.jpg'
 imagehero: true
 ---
 

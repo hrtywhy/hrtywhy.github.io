@@ -2,6 +2,7 @@
 layout:	post
 title:	"Lessons From a Guy in a Hot Tub"
 date:	2013-07-18
+tags: Malware Analysis
 image: '/images/medium/2.jpg'
 imagehero: true
 ---
