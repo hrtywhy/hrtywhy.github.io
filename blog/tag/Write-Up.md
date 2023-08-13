@@ -1,6 +1,6 @@
 ---
 layout: tag_page
-title: "History"
-tag: History
+title: "Write Up"
+tag: Write Up
 robots: noindex
 ---
