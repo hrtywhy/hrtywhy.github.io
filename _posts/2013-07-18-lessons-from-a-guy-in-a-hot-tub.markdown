@@ -1,8 +1,8 @@
 ---
 layout:	post
-title:	"Lessons From a Guy in a Hot Tub"
-date:	2013-07-18
-tags: Malware Analysis
+title:	"Dissect of APT69"
+date:	2023-08-11
+tags: Malware_Analysis
 image: '/images/medium/2.jpg'
 imagehero: true
 ---
