@@ -1,6 +1,6 @@
 ---
 layout: tag_page
 title: "Threat Hunting"
-tag: Berkeley
+tag: Threat Hunting
 robots: noindex
 ---
