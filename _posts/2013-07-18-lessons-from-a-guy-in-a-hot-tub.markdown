@@ -2,7 +2,7 @@
 layout:	post
 title:	"Dissect of APT69"
 date:	2023-08-11
-tags: Malware_Analysis
+tags: Malware-Analysis
 image: '/images/medium/2.jpg'
 imagehero: true
 ---
