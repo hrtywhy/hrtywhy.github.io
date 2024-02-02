@@ -1,8 +1,8 @@
 ---
 layout:	post
-title:	"Welcome!"
-date:	2023-08-11
-tags: Threat-Hunting
+title:	"Unveiling Smokeloader with Procmon "
+date:	2024-02-01
+tags: Malware-Analysis
 image:  '/images/medium/1.jpg'
 imagehero: true
 ---
