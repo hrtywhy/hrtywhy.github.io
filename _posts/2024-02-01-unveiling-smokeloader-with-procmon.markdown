@@ -75,3 +75,5 @@ Then we do the deobfuscated command. Deobfuscated can use [cyberchef](https://gc
 After asking ChatGPT here are the results, namely the powershell command used to call to a specific URL using IEX Invoke-Expression. For the intended URL we can check on virustotal detected by several security vendors as a [malicious URL](https://www.virustotal.com/gui/domain/americanocoffea.ru) affiliated with smokeloader
 
 ![VT](/images/vt.png)
+
+A malicious domain has now been identified and can be used as an IOC. But there is no information on the malware that may be downloaded.
