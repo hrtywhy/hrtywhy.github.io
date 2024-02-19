@@ -20,3 +20,8 @@ Key Features :
 Based on Red Canary report on 2023 Redline still exist 
 
 ![alt text](/images/red-canary.png)
+
+RedLine Stealer Infection Chain <br>
+Zip ->LNK PS ->mshta (URL1) ->PS ->cmd ->PS -> URL2->exe
+
+![redline](/images/pdf.png)
