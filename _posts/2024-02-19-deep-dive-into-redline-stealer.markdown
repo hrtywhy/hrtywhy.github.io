@@ -34,4 +34,10 @@ LNK file to malicious web `http://thanhancompany.com/ta/line.hta`
 
 ![alt text](/images/procmonz-redline.png)
 
+After we check the malicious link towards to website
+
 ![alt text](/images/website.png)
+
+Then we check the page source tryn to running VBSCRIPT and execute malicious obfuscated character
+
+![alt text](/images/char-web.png)
