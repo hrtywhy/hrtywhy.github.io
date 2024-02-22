@@ -32,6 +32,6 @@ After click the file or running the pdf shorcut, we can check the process runnin
 
 LNK file to malicious web ```http://thanhancompany.com/ta/line.hta```
 
-![alt text](image.png)
+![alt text](/images/procmonz-redline.png)
 
-![alt text](image-1.png)
+![alt text](/images/website.png)
