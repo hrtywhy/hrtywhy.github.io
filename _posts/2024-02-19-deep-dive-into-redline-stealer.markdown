@@ -22,6 +22,16 @@ Based on Red Canary report on 2023 Redline still exist
 ![alt text](/images/red-canary.png)
 
 RedLine Stealer Infection Chain <br>
-Zip ->LNK PS ->mshta (URL1) ->PS ->cmd ->PS -> URL2->exe
+Zip -> LNK PS -> mshta (URL1) -> PS -> cmd -> PS -> URL2 -> exe
 
 ![redline](/images/pdf.png)
+
+After click the file or running the pdf shorcut, we can check the process running on background with procmon
+
+![alt text](/images/procmon-redline.png)
+
+LNK file to malicious web ```http://thanhancompany.com/ta/line.hta```
+
+![alt text](image.png)
+
+![alt text](image-1.png)
