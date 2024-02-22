@@ -30,7 +30,7 @@ After click the file or running the pdf shorcut, we can check the process runnin
 
 ![alt text](/images/procmon-redline.png)
 
-LNK file to malicious web ```http://thanhancompany.com/ta/line.hta```
+LNK file to malicious web `http://thanhancompany.com/ta/line.hta`
 
 ![alt text](/images/procmonz-redline.png)
 
