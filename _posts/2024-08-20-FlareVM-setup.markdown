@@ -71,3 +71,5 @@ dont forget to change network adapter on VirtualBox to Host Only
 
 Flare VM setup completed! 🖥️
 
+---
+
