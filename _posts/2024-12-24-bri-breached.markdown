@@ -1,6 +1,6 @@
 ---
 layout:	post
-title:	"XMas Gift for BRI (People's Bank of Indonesia)"
+title:	"Inside the Alleged BRI Data Breach: Claims, Doubts, and Evidence"
 date:	2024-12-24
 tags: Story
 image: '/images/medium/hackingz.jpg'
@@ -25,6 +25,7 @@ Example of publicly accessible data referenced by the threat actor:
 Since the data could not be proven to be true and to gain more evidence, I reached out to the threat actor under the pretext of purchasing the data. Below are excerpts from my conversations via Telegram:
 
 Screenshots of Telegram conversations:
+
 ![alt text](/images/captured.png)
 
 ![alt text](/images/capturedd.png)
