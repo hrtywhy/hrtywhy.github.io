@@ -3,7 +3,7 @@ layout:	post
 title:	"Streamlining Digital Forensics Investigations with Cyber Triage"
 date:	2024-12-24
 tags: Digital-Forensics
-image: '/images/medium/original.gif'
+image: '/images/medium/hallowen.gif'
 imagehero: true
 ---
 
