@@ -18,7 +18,7 @@ View of compromised host that has been acquired
 
 ### Basic Host Information
 
-Windows 7 Ultimate - version 6.1 (Build 7601) was installed
+Host compromised was built with Windows 7 Ultimate - version 6.1 (Build 7601)
 ![alt text](/images/image-4.png)
 
 We can see that Windows Defender Startup is set to Manual & Firewall is not enabled and indicated with score Suspicious 
@@ -30,7 +30,7 @@ We can see that Windows Defender Startup is set to Manual & Firewall is not enab
 This image shows how Cyber Triage helps identify the point of entry used by WannaCry. The presence of suspicious connections or exploit attempts, like the EternalBlue vulnerability, is highlighted here.
 ![alt text](/images/image-7.png)
 
-With <b>EternalBlue</b> threat actor exploit the system with the suspicious binary
+With <b>EternalBlue</b> vulnerability threat actor exploit the system and sent some suspicious binary
 ![alt text](/images/image-8.png)
 
 We can see the timeline threat actor get in to system
@@ -38,11 +38,10 @@ We can see the timeline threat actor get in to system
 
 ### Execution
 
-They created startup item/shedule task for their act on path
-/Windows/temp/tasksche.exe
+They created startup item/shedule task for their malicious activity on path `/Windows/temp/tasksche.exe`
 ![alt text](/images/image-15.png)
 
-Threat actor stored their tools on directory C:\Windows\Temp this commonly by threat actor because globally writeable. They used <b>sliver</b> as a command control
+Threat actor stored their tools on directory `C:\Windows\Temp` this commonly used by threat actor because globally writeable. They used <b>Sliver C2</b> as a command control
 ![alt text](/images/image-10.png)
 
 This image shows processes associated with the ransomware. Cyber Triage identifies abnormal file and process behavior, helping investigators trace the execution phase of WannaCry
@@ -50,7 +49,7 @@ This image shows processes associated with the ransomware. Cyber Triage identifi
 
 ### Command & Control
 
-Timeline for threat actor created C2 malware on victim host and with filename and path 11:22:05am EDT September 14, 2023
+Timeline for threat actor created C2 malware on victim host and with filename and path *11:22:05am EDT September 14*
 ```python
 /windows/temp/chr0me.exe
 ```
@@ -69,9 +68,9 @@ Here, Cyber Triage helps detect communication between the compromised host and t
 This image illustrates the encrypted files on the host. Cyber Triage helps investigators quickly recognize the encrypted data, assisting in the assessment of the attack’s full impact.
 ![alt text](/images/impacted-host.png)
 
-Once deployed, WannaCry encrypted crucial files, making them inaccessible to the user. It’s important to note how Cyber Triage helped investigators quickly identify the malware's presence and scope, enabling rapid containment and reducing the potential for data loss.
+Once deployed, WannaCry encrypted crucial files, making them inaccessible to the user. It’s important to note how Cyber Triage helped investigators quickly identify the malware's presence and scope.
 
-WannaCry ransomware incident emphasizes the importance of using advanced tools like Cyber Triage in cybersecurity investigations. Key takeaways include the need for regular patching to close vulnerabilities such as MS17-010, the value of real-time analysis tools, and the effectiveness of Cyber Triage in speeding up the response and recovery process. For organizations aiming to improve their cybersecurity posture, adopting proactive threat detection and response strategies like these is critical in defending against future threats.
+WannaCry ransomware incident emphasizes the importance of using advanced tools like Cyber Triage in cybersecurity investigations. Key takeaways include the need for regular patching to close vulnerabilities such as MS17-010, the effectiveness of Cyber Triage in speeding up the response and recovery process. For organizations aiming to improve their cybersecurity posture, adopting proactive threat detection and response strategies like these is critical in defending against future threats.
 
 ### Indicators of Compromise
 
