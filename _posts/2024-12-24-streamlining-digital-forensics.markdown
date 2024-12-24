@@ -11,7 +11,6 @@ In this blog, we delve into the practical application of <b>Cyber Triage</b> too
 
 By leveraging its advanced capabilities, investigators can streamline forensic workflows and enhance the efficiency of their investigations. Visit [Cyber Triage's official page](https://www.cybertriage.com/) to learn more or evaluate the tool. This blog provides actionable insights into how Cyber Triage can be a game-changer in forensic investigations, making it a valuable resource for DFIR professionals and cybersecurity enthusiasts.
 
-Cyber Triage is essential in incident response, particularly when dealing with high-impact ransomware like WannaCry. It enables investigators to rapidly collect and analyze evidence, pinpointing compromised systems and detecting malicious activities. In incidents like WannaCry, where speed is crucial to mitigate damage, Cyber Triage helps quickly identify the attack's entry point, affected systems, and the scope of encryption or data exfiltration. By streamlining the forensic process, Cyber Triage provides critical insights, allowing security teams to respond efficiently and effectively.
 
 View of compromised host that has been acquired
 
