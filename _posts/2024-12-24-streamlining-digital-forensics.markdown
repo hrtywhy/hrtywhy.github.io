@@ -88,17 +88,17 @@ The WannaCry ransomware attack highlights the importance of timely digital foren
 | 91[.]121[.]65[.]179
 
 | Domains |
-|------------|
-hxxp://www[.]btcfrog[.]com/qr/bitcoinpng[.]php?address
-hxxp://www[.]rentasyventas[.]com/incluir/rk/imagenes[.]html
-hxxp://www[.]rentasyventas[.]com/incluir/rk/imagenes[.]html?retencion=081525418
-hxxp://gx7ekbenv2riucmf[.]onion
+|---------|
+| hxxp://www[.]btcfrog[.]com/qr/bitcoinpng[.]php?address
+| hxxp://www[.]rentasyventas[.]com/incluir/rk/imagenes[.]html
+| hxxp://www[.]rentasyventas[.]com/incluir/rk/imagenes[.]html?retencion=081525418
+| hxxp://gx7ekbenv2riucmf[.]onion
 
 | Hashes |
-|------------|
+|--------|
 |5a89aac6c8259abbba2fa2ad3fcefc6e
-05da32043b1e3a147de634c550f1954d
-8e97637474ab77441ae5add3f3325753
-c9ede1054fef33720f9fa97f5e8abe49
+| 05da32043b1e3a147de634c550f1954d
+| 8e97637474ab77441ae5add3f3325753
+| c9ede1054fef33720f9fa97f5e8abe49
 
 [Github](https://github.com/sophoslabs/IoCs/blob/master/Worm-WannaCry)
