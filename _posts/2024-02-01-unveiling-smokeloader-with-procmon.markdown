@@ -3,7 +3,7 @@ layout:	post
 title:	"Unveiling Smokeloader with Procmon "
 date:	2024-02-01
 tags: Malware-Analysis
-image:  '/images/medium/1.jpg'
+image:  '/images/medium/cmd.gif'
 imagehero: true
 ---
 
