@@ -7,7 +7,7 @@ image: '/images/medium/hallowen.gif'
 imagehero: true
 ---
 
-In this blog, we delve into the practical application of <b>Cyber Triage</b> tools in analyzing a host compromised by the infamous WannaCry ransomware. Cyber Triage, a powerful incident response tool, simplifies the process of collecting, analyzing, and correlating digital evidence to identify the root cause and impact of an attack.
+In this blog, we delve into the practical application of <b>Cyber Triage</b> tools in analyzing a host compromised by the infamous <b>WannaCry ransomware</b>. Cyber Triage, a powerful incident response tool, simplifies the process of collecting, analyzing, and correlating digital evidence to identify the root cause and impact of an attack.
 
 By leveraging its advanced capabilities, investigators can streamline forensic workflows and enhance the efficiency of their investigations. Visit [Cyber Triage's official page](https://www.cybertriage.com/) to learn more or evaluate the tool. This blog provides actionable insights into how Cyber Triage can be a game-changer in forensic investigations, making it a valuable resource for DFIR professionals and cybersecurity enthusiasts.
 
@@ -32,7 +32,7 @@ We can see that Windows Defender Startup is set to Manual & Firewall is not enab
 As we can see threat actor utilize RCE vulnerabilities MS17–010 / CVE-2017-0144 (EternalBlue)
 ![alt text](/images/image-7.png)
 
-With EternalBlue threat ector exploit the system with the suspicious binary
+With <b>EternalBlue</b> threat ector exploit the system with the suspicious binary
 ![alt text](/images/image-8.png)
 
 We can see the timeline threat actor get in to system
@@ -46,10 +46,10 @@ They created startup item/shedule task for their act on path
 
 Threat actor stored their tools on directory C:\Windows\Temp this commonly by threat actor because globally writeable
 
-They used sliver as a command control
+They used <b>sliver</b> as a command control
 ![alt text](/images/image-10.png)
 
-With this tools C2 they installed ransomware
+With this tools C2 they installed <b>ransomware</b>
 ![alt text](/images/image-11.png)
 
 ### Command & Control
@@ -72,11 +72,13 @@ Timeline for threat actor created C2 malware on victim host and with filename an
 ```python
 /windows/temp/urb0rk3d.exe
 ```  
-is the path and filename for the ransomware
+is the path and filename for the <b>ransomware</b>
 
 ![alt text](/images/impacted-host.png)
 
-The WannaCry ransomware attack highlights the importance of timely digital forensics in incident response. Cyber Triage plays a pivotal role in this process, offering streamlined tools to identify compromised systems, track the spread of malware, and mitigate its impact. Key takeaways include the necessity of keeping systems updated to prevent vulnerabilities, the value of real-time analysis tools like Cyber Triage, and the importance of rapid isolation and containment during such attacks. Adopting these best practices can significantly enhance an organization's ability to defend against future cyber threats.
+Once deployed, WannaCry encrypted crucial files, making them inaccessible to the user. It’s important to note how Cyber Triage helped investigators quickly identify the malware's presence and scope, enabling rapid containment and reducing the potential for data loss.
+
+ WannaCry ransomware incident emphasizes the importance of using advanced tools like Cyber Triage in cybersecurity investigations. Key takeaways include the need for regular patching to close vulnerabilities such as MS17-010, the value of real-time analysis tools, and the effectiveness of Cyber Triage in speeding up the response and recovery process. For organizations aiming to improve their cybersecurity posture, adopting proactive threat detection and response strategies like these is critical in defending against future threats.
 
 ### Indicators of Compromise
 
