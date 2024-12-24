@@ -29,10 +29,10 @@ We can see that Windows Defender Startup is set to Manual & Firewall is not enab
 
 ### Initial Access
 
-As we can see threat actor utilize RCE vulnerabilities MS17–010 / CVE-2017-0144 (EternalBlue)
+This image shows how Cyber Triage helps identify the point of entry used by WannaCry. The presence of suspicious connections or exploit attempts, like the EternalBlue vulnerability, is highlighted here.
 ![alt text](/images/image-7.png)
 
-With <b>EternalBlue</b> threat ector exploit the system with the suspicious binary
+With <b>EternalBlue</b> threat actor exploit the system with the suspicious binary
 ![alt text](/images/image-8.png)
 
 We can see the timeline threat actor get in to system
@@ -49,7 +49,7 @@ Threat actor stored their tools on directory C:\Windows\Temp this commonly by th
 They used <b>sliver</b> as a command control
 ![alt text](/images/image-10.png)
 
-With this tools C2 they installed <b>ransomware</b>
+This image shows processes associated with the ransomware. Cyber Triage identifies abnormal file and process behavior, helping investigators trace the execution phase of WannaCry
 ![alt text](/images/image-11.png)
 
 ### Command & Control
@@ -62,8 +62,8 @@ Timeline for threat actor created C2 malware on victim host and with filename an
 
 ![alt text](/images/image-12.png)
 
-192.168.1.209 is the call-back IP address for the C2 malware
-
+192.168.1.209 is the call-back IP address for the C2 malware.
+Here, Cyber Triage helps detect communication between the compromised host and the attacker's C2 server. Anomalous outbound network traffic or suspicious DNS requests often indicate C2 activity.
 
 ![alt text](/images/image-13.png)
 
@@ -72,7 +72,7 @@ Timeline for threat actor created C2 malware on victim host and with filename an
 ```python
 /windows/temp/urb0rk3d.exe
 ```  
-is the path and filename for the <b>ransomware</b>
+This image illustrates the encrypted files on the host. Cyber Triage helps investigators quickly recognize the encrypted data, assisting in the assessment of the attack’s full impact.
 
 ![alt text](/images/impacted-host.png)
 
