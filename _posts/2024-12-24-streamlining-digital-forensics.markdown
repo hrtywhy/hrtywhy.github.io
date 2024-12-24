@@ -101,4 +101,4 @@ The WannaCry ransomware attack highlights the importance of timely digital foren
 | 8e97637474ab77441ae5add3f3325753
 | c9ede1054fef33720f9fa97f5e8abe49
 
-[Github](https://github.com/sophoslabs/IoCs/blob/master/Worm-WannaCry)
+[More IoCs](https://github.com/sophoslabs/IoCs/blob/master/Worm-WannaCry)
