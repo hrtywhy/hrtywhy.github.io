@@ -54,19 +54,23 @@ With this tools C2 they installed ransomware
 
 Timeline for threat actor created C2 malware on victim host and with filename and path 11:22:05am EDT September 14, 2023
 
-```
+```python
 /windows/temp/chr0me.exe
 ```
 
 ![alt text](/images/image-12.png)
 
-What is the call-back IP address for the C2 malware?
-192.168.1.209
+192.168.1.209 is the call-back IP address for the C2 malware
+
+
 ![alt text](/images/image-13.png)
 
 ### Impact
 
-/windows/temp/urb0rk3d.exe  is the path and filename for the ransomware
+```python
+/windows/temp/urb0rk3d.exe
+```  
+is the path and filename for the ransomware
 
 ![alt text](/images/impacted-host.png)
 
