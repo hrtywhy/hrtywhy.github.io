@@ -11,13 +11,15 @@ In this blog, we delve into the practical application of <b>Cyber Triage</b> too
 
 By leveraging its advanced capabilities, investigators can streamline forensic workflows and enhance the efficiency of their investigations. Visit [Cyber Triage's official page](https://www.cybertriage.com/) to learn more or evaluate the tool. This blog provides actionable insights into how Cyber Triage can be a game-changer in forensic investigations, making it a valuable resource for DFIR professionals and cybersecurity enthusiasts.
 
+Cyber Triage is essential in incident response, particularly when dealing with high-impact ransomware like WannaCry. It enables investigators to rapidly collect and analyze evidence, pinpointing compromised systems and detecting malicious activities. In incidents like WannaCry, where speed is crucial to mitigate damage, Cyber Triage helps quickly identify the attack's entry point, affected systems, and the scope of encryption or data exfiltration. By streamlining the forensic process, Cyber Triage provides critical insights, allowing security teams to respond efficiently and effectively.
+
 View of compromised host that has been acquired
 
 ![alt text](/images/image-3.png)
 
 ### Basic Host Information
 
-Windows 7 Ultimate - 6.1 (Build 7601) is version was installed on device
+Windows 7 Ultimate - version 6.1 (Build 7601) was installed
 ![alt text](/images/image-4.png)
 
 We can see that Windows Defender Startup is set to Manual & Firewall is not enabled and indicated with score Suspicious 
@@ -74,4 +76,4 @@ is the path and filename for the ransomware
 
 ![alt text](/images/impacted-host.png)
 
-
+The WannaCry ransomware attack highlights the importance of timely digital forensics in incident response. Cyber Triage plays a pivotal role in this process, offering streamlined tools to identify compromised systems, track the spread of malware, and mitigate its impact. Key takeaways include the necessity of keeping systems updated to prevent vulnerabilities, the value of real-time analysis tools like Cyber Triage, and the importance of rapid isolation and containment during such attacks. Adopting these best practices can significantly enhance an organization's ability to defend against future cyber threats.
