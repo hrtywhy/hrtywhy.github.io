@@ -129,19 +129,19 @@ By analyzing the malicious files, i notice multiple defense evasion functionalit
 During the intrusion, no final actions beyond data collection and discovery tasks were observed.
 
 
-## Diamond Model
+# Diamond Model
 
 ![alt text](/images/diamond-model.png)
 
-## Indicators
+# Indicators
 
-| IOC
------ 
-hxxp://zs230[.]seboit[.]skin
-| 162.158.78.254
-| 188.114.97.1
-| 172.70.135.75
-| 172.70.130.253
-| 63.141.247.162
+| IOC |
+---------------
+| h1xxp://zs230[.]seboit[.]skin |
+| 162.158.78.254 |
+| 188.114.97.1 |
+| 172.70.135.75 |
+| 172.70.130.253 |
+| 63.141.247.162 |
 
 
