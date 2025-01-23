@@ -3,7 +3,7 @@ layout:	post
 title:	"Backdoor Breakdowns Investigating the Marijuana"
 date:	2025-01-23
 tags: Malware-Analysis
-image:  '/images/medium/cmd.gif'
+image:  '/images/medium/marijuana.png'
 imagehero: true
 ---
 
