@@ -7,7 +7,7 @@ image:  '/images/medium/marijuana.png'
 imagehero: true
 ---
 
-The beginning of 2025 was quite hectic for me as I assisted a friend whose business operates in the media industry. My friend complained about Chinese ads appearing on their website and, upon further investigation on Google, discovered Chinese and Turkey's languange backlinks directing users to their site. These backlinks are often exploited by actors such as "slot gacor" operators to boost their search rankings on Google, embedding links on other websites to improve their visibility and achieve first-page results.
+The beginning of 2025 was quite hectic for me as I assisted a friend whose business operates in the media industry. My friend complained about Chinese ads appearing on their website and, upon further investigation on Google, discovered Chinese and Turkish language backlinks directing users to their site. These backlinks are often exploited by actors such as "slot gacor" operators to boost their search rankings on Google, embedding links on other websites to improve their visibility and achieve first-page results.
 
 # Case Summary
 
@@ -55,6 +55,7 @@ Decode the array from hexadecimal format into ASCII characters. Refer to the ima
 The “$GNJ” variable on bottom which is decoded using a custom “UHEX” function. This variable is later used by referencing indexes in the array which call upon functions, this is the logic that allows the function calls to bypass Cloudflare WAF. This variable also i use for scanning on the environtment infected.
 
 ![alt text](/images/ascii.png)
+
 ![alt text](/images/code.png)
 
 That web shell provides a range of features and functions that can be used by attackers for various purposes. Those functions include file manipulation (uploading, renaming, removing), execution of commands (such as chmod and unzip), and manipulating file timestamps.
@@ -79,7 +80,7 @@ another file with name `cache.php` and this indicate a shell flagged on VirusTot
 
 # Persistence
 
-After some deep dive analyzing thru `cache.php` its just only cache file of the backdoor, but the others malicious file to create persistence.
+After some deep dive analyzing thru `cache.php` its not just only cache file of the backdoor, but the others malicious file to create persistence.
 
 ![alt text](/images/codesszz.png)
 
@@ -135,13 +136,11 @@ During the intrusion, no final actions beyond data collection and discovery task
 
 # Indicators
 
-| IOC |
----------------
-| h1xxp://zs230[.]seboit[.]skin |
-| 162.158.78.254 |
-| 188.114.97.1 |
-| 172.70.135.75 |
-| 172.70.130.253 |
-| 63.141.247.162 |
+- hxxp://zs230[.]seboit[.]skin
+- 162.158.78.254
+- 188.114.97.1
+- 172.70.135.75
+- 172.70.130.253
+- 63.141.247.162
 
 
