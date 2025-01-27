@@ -7,31 +7,31 @@ image:  '/images/medium/marijuana.png'
 imagehero: true
 ---
 
-The beginning of 2025 was quite hectic for me as I assisted a friend whose business operates in the media industry. My friend complained about Chinese ads appearing on their website and, upon further investigation on Google, discovered Chinese and Turkish language backlinks directing users to their site. These backlinks are often exploited by actors such as "slot gacor" operators to boost their search rankings on Google, embedding links on other websites to improve their visibility and achieve first-page results.
+At the start of 2025, I found myself navigating a challenging situation while assisting a friend in the media industry. They reported unusual activity on their website, including unsolicited Chinese advertisements. Upon deeper investigation, we identified backlinks in Chinese and Turkish, redirecting traffic to their site. These backlinks were likely being exploited by threat actors—commonly associated with “slot gacor” operations—to manipulate search rankings on Google. By embedding these links across compromised websites, they aimed to boost their visibility and secure top search engine results.
 
 # Case Summary
 
-The Marijuana PHP Backdoor is a sophisticated malicious script that compromises web servers. By exploiting vulnerabilities and employing advanced obfuscation techniques, it silently evades detection, posing a significant threat to online security. The obfuscation masks the malicious payloads, making detection and prevention by automated security systems significantly more challenging.
+The Marijuana PHP Backdoor is an advanced malicious script designed to infiltrate and compromise web servers. Leveraging vulnerabilities and sophisticated obfuscation techniques, it operates stealthily, evading detection by security systems and posing a significant threat to online platforms. The obfuscation conceals malicious payloads, complicating detection and mitigation efforts by automated tools.
 
-Once executed, the Marijuana PHP shell provides attackers with a browser-accessible interface, enabling comprehensive file management capabilities such as:
+Upon execution, the Marijuana PHP shell grants attackers a browser-accessible interface equipped with extensive file management features, including:
 
 - Uploading and downloading files.
 - Modifying file permissions.
-- Viewing and editing server files.
+- Viewing and editing server-side files.
 
-This functionality allows threat actors to establish persistence, gather sensitive information, and prepare for privilege escalation or further exploitation. Despite its potential impact, the PHP shell is designed to operate covertly without disrupting the website’s functionality, leaving website owners unaware of its presence until specific signs of compromise emerge.
+This capability allows threat actors to maintain persistence, exfiltrate sensitive information, and prepare for privilege escalation or further exploitation. Despite its potentially severe impact, the PHP shell is crafted to operate covertly, ensuring the website’s functionality remains unaffected. As a result, website owners are often unaware of its presence until clear indicators of compromise are detected.
 
 # Initial Access
 
-Based on the logs I analyzed, I am highly confident that the threat actor gained initial access through exploit Public-Facing Application that identified by vulnerability in the CMS or its plugins. During this intrusion, the attacker utilized a request to upload a malicious folder named <b>"bk,"</b> which contained additional malicious files such as `geju.php`, `hiroshi.php`, and `godsend.php`.
+From the analyzed logs, it is evident that the threat actor gained initial access by exploiting a vulnerability in the CMS or its plugins—a commonly targeted entry point for public-facing applications. During this intrusion, the attacker uploaded a malicious folder named "bk", which served as a payload container. This folder housed additional malicious files, including `geju.php`, `hiroshi.php`, and `godsend.php`, further enabling the attacker’s activities.
 
 ![alt text](/images/logz.png)
 
 # Execution
 
-Threat actor utilize PHP backdoor web shell known as <b>Marijuana</b>. Marijuana can be used as a file manager accessed through a web browser. The shell provides a threat actor the primary ability to read and write content on the host, amongst other actions.
+Threat actors have leveraged a PHP backdoor web shell identified as Marijuana. This shell functions as a browser-accessible file manager, granting attackers the ability to read, write, and manipulate content on the compromised host, among other capabilities.
 
-The author of the Marijuana PHP shell has a GitHub page which claims that this is a stealth backdoor encoded with hex to bypass web application firewalls (WAF's). The screenshot of the GitHub repository below highlights the features that this shell is allegedly equipped with such as file download and CHMOD. These features are investigated further in this article.
+The Marijuana PHP shell's creator maintains a GitHub repository that promotes it as a stealthy backdoor designed to bypass web application firewalls (WAFs) by employing hexadecimal encoding. The repository highlights several key features, including file downloads and CHMOD functionality. These capabilities are analyzed in detail later in this article.
 
 ![alt text](/images/marjun.png)
 ![alt text](/images/github-marjun.png)
@@ -41,95 +41,97 @@ hxxps://domain[.]com/bk/index.php
 
 ![alt text](/images/marijuana.png)
  
-In the folder will create some malicious files like index.php, cache.php and .httaccess
+The folder contains several malicious files, including `index.php`, `cache.php`, and `.htaccess.`
 
 ![alt text](/images/marjun-cache.png)
 
-The index.php file is largely encoded in hexadecimal, a method used to evade Cloudflare's WAF. The MARIJUANA shell employs selective obfuscation by encoding PHP functions commonly flagged as suspicious or associated with malware. Instead of plaintext usage, these functions are obfuscated as hexadecimal values stored in an array
+The `index.php` file is primarily encoded in hexadecimal to bypass Cloudflare’s Web Application Firewall (WAF). The Marijuana shell uses selective obfuscation, encoding commonly flagged PHP functions into hexadecimal values stored within an array. This technique obscures the code to avoid detection by signature-based scanners and security measures
 
-Threat Actor's frequently employ code obfuscation techniques to evade signature-based scanners and other security measures. In some cases, the entire file’s code is obfuscated, while in others, only specific sections are targeted for obfuscation.
 
 ![alt text](/images/array.png)
 
-Decode the array from hexadecimal format into ASCII characters. Refer to the image provided for more details. In the image, PHP functions begin to appear, but they are concatenated into a single, continuous string.
+The hexadecimal array can be decoded into ASCII characters, revealing PHP functions concatenated into a continuous string.
 
-The “$GNJ” variable on bottom which is decoded using a custom “UHEX” function. This variable is later used by referencing indexes in the array which call upon functions, this is the logic that allows the function calls to bypass Cloudflare WAF. This variable also i use for scanning on the environtment infected.
+The `$GNJ` variable, decoded using a custom `“UHEX”` function, is used to reference array indexes that invoke obfuscated functions, thus circumventing Cloudflare’s WAF. This variable also aids in scanning the infected environment for further detection.
 
 ![alt text](/images/ascii.png)
 
 ![alt text](/images/code.png)
 
-That web shell provides a range of features and functions that can be used by attackers for various purposes. Those functions include file manipulation (uploading, renaming, removing), execution of commands (such as chmod and unzip), and manipulating file timestamps.
+The web shell offers various features that attackers can exploit for different purposes, such as file manipulation (upload, rename, delete), command execution (e.g., `chmod`, `unzip`), and altering file timestamps
 
-There is interesting function with name <b>htmlspecialchars</b>, and <b>file-get-contents</b>. These functions are used together to read the contents of a file. The function is designed to allow a GET request to encode both the file and its path. Parameters such as `d` (referencing the directory) and `s` (referencing the file name) are used to construct a URL request.
-
-The primary reason for this encoding is to obfuscate the request, making it difficult for Cloudflare to identify and flag it as suspicious.
+One notable function is htmlspecialchars, used in conjunction with file-get-contents to read file contents. These functions allow the encoding of both the file path and name through GET requests, utilizing parameters like `d` (directory) and `s` (file name) to construct the request. This encoding obfuscates the request, making it harder for Cloudflare to detect and flag it as malicious
 
 ![alt text](/images/codes.png)
 
-We can see the artifacts in these logs.
+The logs provide clear artifacts that indicate the malicious activity
 
 ![alt text](/images/bk-log.png)
 
-To identify this type of malicious behavior, one option is to use a tool like [CyberChef](https://gchq.github.io/CyberChef/) to quickly convert the hexadecimal values above, helping you to determine that the request is trying to view the file index.php from within the directory under `/home/[redacted]/public_html/adv`
+To detect this type of malicious behavior, you can use tools like [CyberChef](https://gchq.github.io/) to decode the hexadecimal values. This helps reveal that the request is attempting to access the index.php file within the /home/[censored]/public_html/adv directory.
 
 ![alt text](/images/ascii-adv.png)
-another file with name `cache.php` and this indicate a shell flagged on VirusTotal
+
+Another file, `cache.php`, was found, which has been flagged as a shell on VirusTotal.
 
 ![alt text](/images/codess.png)
+
 ![alt text](/images/Vtot.png)
 
 # Persistence
 
-After some deep dive analyzing thru `cache.php` its not just only cache file of the backdoor, but the others malicious file to create persistence.
+After a deeper analysis of `cache.php`, it became evident that this file is not just a cache for the backdoor, but also part of a network of malicious files designed to maintain persistence on the system.
+
 
 ![alt text](/images/codesszz.png)
 
-From the User-Agent we know that is malware and and there is authkey
+The User-Agent indicates that this is malware, and it includes an authentication key `(authkey)`.
 
 ![alt text](/images/coder.png)
 
-I dont have any idea about this, but it seems function to check if any files with those specific format and it will be embed a malicious code or backdoor. `encodePath()` and `decodePath()` functions indicate intentional obfuscation of directory paths to bypass detection.
+Although the exact purpose is unclear, it appears the `encodePath()` and `decodePath()` functions are used to check for specific file formats and embed malicious code or backdoors. The use of these functions suggests intentional obfuscation of directory paths to evade detection
 
 ![alt text](/images/coderx.png)
 
 
-The same malicious code with different name `wp-conflg.php` . The file `wp-config.php` is a legitimate core configuration file for WordPress, critical for the website’s functionality. However, the malicious file `wp-conflg.php` is an impersonation attempt where the attacker has replaced the letter <b>"i"</b> with <b>"l"</b> to evade detection. This subtle change can deceive admins into believing the file is legitimate and avoid deleting it, even though it is a malicious script designed to compromise the system.
+The malicious file `wp-conflg.php` is an attempt to impersonate the legitimate WordPress configuration file `wp-config.php`. The attacker subtly replaces the letter `"i"` with `"l"` to avoid detection. This small change can deceive administrators into mistaking the file for legitimate, potentially allowing it to remain undetected and maintain control over the system
 
 ![alt text](/images/pw-name.png)
 
-As i said before there is function to embed malicious code to specific extension and yups i found it on both of these files
+As previously mentioned, there is a function designed to embed malicious code into files with specific extensions. I discovered this functionality within both of the identified files
 
 ![alt text](/images/files-embed.png)
 
-Upon execution, the obfuscated strings are decoded to unleash malicious actions
+Upon execution, the obfuscated strings are decoded, triggering the execution of malicious actions
 
 ![alt text](/images/base64.png)
 
-To evading detection, they obfuscated 3x 
+To evade detection, the code undergoes three layers of obfuscation
 
 ![alt text](/images/flow-graph.png)
 
-Furthermore, bk folder contains malicious files will be create on each folder on the server. Those malicious files identified infected and created more than 4K files on the server
+Additionally, the `bk` folder contains malicious files that are created in every directory on the server. These files have been identified as part of the infection, leading to the creation of over 4,000 malicious files across the system
 
 ![alt text](/images/infected-files.png)
 
- Also i found the similar content like this [file](https://pastebin.com/YH9zHMCp) belong to marijuana file encoded with decimal. Unfornutely, I didn't save it as an artifact before I deleted it.
+I also discovered a [file](https://pastebin.com/YH9zHMCp) with content similar to the one found in the Marijuana backdoor, encoded in decimal. Unfortunately, I didn’t save it as an artifact before deleting it.
 
 # Defense Evasion
 
-By analyzing the malicious files, i notice multiple defense evasion functionalities implemented, such as:
-- Bypasssing WAF <br>
-<i>The shell possesses a “stealth” mode, which can be used to bypass website security services like web application firewalls with encoded functions to hex for bypassing WAF</i>
+Upon analyzing the malicious files, I identified multiple defense evasion techniques, including:
 
-- Embedded Payloads
+- Bypassing WAF <br>
+The shell has a <i>"stealth"</i> mode that allows it to bypass web application firewalls by encoding functions into hexadecimal to avoid detection.
 
-- Command Obfuscation
+- Embedded Payloads<br>
+Malicious payloads embedded within the files.
+
+- Command Obfuscation<br>
+The use of obfuscation techniques to disguise and execute commands without triggering alarms.
 
 # Impact
 
-During the intrusion, no final actions beyond data collection and discovery tasks were observed.
-
+During the intrusion, no actions beyond data collection and reconnaissance were observed, with no final exploit or system compromise taking place.
 
 # Diamond Model
 
@@ -137,12 +139,12 @@ During the intrusion, no final actions beyond data collection and discovery task
 
 # Indicators
 
-- hxxp://zs230[.]seboit[.]skin
-- 162.158.78.254
-- 188.114.97.1
-- 172.70.135.75
-- 172.70.130.253
-- 63.141.247.162
+- Domain: <br>
+    - hxxp://zs230[.]seboit[.]skin
 
-
-Have you encountered similar backdoors in your environment? Share your experience below!
+- IP Addresses:
+    - 162.158.78.254
+    - 188.114.97.1
+    - 172.70.135.75
+    - 172.70.130.253
+    - 63.141.247.162
