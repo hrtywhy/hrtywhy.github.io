@@ -1,6 +1,6 @@
 ---
 layout:	post
-title:	"Uncovering the Marijuana PHP Backdoor: How It Evades Detection and Compromises Systems"
+title:	"Uncovering the Marijuana PHP Backdoor and How They Evading Detection"
 date:	2025-01-23
 tags: Malware-Analysis
 image:  '/images/medium/marijuana.png'
@@ -11,7 +11,7 @@ The beginning of 2025 was quite hectic for me as I assisted a friend whose busin
 
 # Case Summary
 
-The Marijuana PHP shell operates as a backdoor, granting threat actors initial access to compromised servers while remaining undetected. This malware is specifically engineered to bypass Web Application Firewalls (WAFs) by using hexadecimal obfuscation for incoming requests. The obfuscation masks the malicious payloads, making detection and prevention by automated security systems significantly more challenging.
+The Marijuana PHP Backdoor is a sophisticated malicious script that compromises web servers. By exploiting vulnerabilities and employing advanced obfuscation techniques, it silently evades detection, posing a significant threat to online security. The obfuscation masks the malicious payloads, making detection and prevention by automated security systems significantly more challenging.
 
 Once executed, the Marijuana PHP shell provides attackers with a browser-accessible interface, enabling comprehensive file management capabilities such as:
 
@@ -102,7 +102,7 @@ As i said before there is function to embed malicious code to specific extension
 
 ![alt text](/images/files-embed.png)
 
-Upon checking, based64 encode script embeded on file 
+Upon execution, the obfuscated strings are decoded to unleash malicious actions
 
 ![alt text](/images/base64.png)
 
@@ -145,3 +145,4 @@ During the intrusion, no final actions beyond data collection and discovery task
 - 63.141.247.162
 
 
+Have you encountered similar backdoors in your environment? Share your experience below!
