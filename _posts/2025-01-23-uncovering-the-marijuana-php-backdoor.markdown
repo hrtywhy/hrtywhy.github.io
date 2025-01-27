@@ -23,7 +23,7 @@ This capability allows threat actors to maintain persistence, exfiltrate sensiti
 
 # Initial Access
 
-From the analyzed logs, it is evident that the threat actor gained initial access by exploiting a vulnerability in the CMS or its plugins—a commonly targeted entry point for public-facing applications. During this intrusion, the attacker uploaded a malicious folder named "bk", which served as a payload container. This folder housed additional malicious files, including `geju.php`, `hiroshi.php`, and `godsend.php`, further enabling the attacker’s activities.
+From the analyzed logs, it is evident that the threat actor gained initial access by exploiting a vulnerability in the CMS or its plugins—a commonly targeted entry point for public-facing applications. During this intrusion, the attacker uploaded a malicious folder named <b>"bk"</b>, which served as a payload container. This folder housed additional malicious files, including `geju.php`, `hiroshi.php`, and `godsend.php`, further enabling the attacker’s activities.
 
 ![alt text](/images/logz.png)
 
@@ -36,8 +36,8 @@ The Marijuana PHP shell's creator maintains a GitHub repository that promotes it
 ![alt text](/images/marjun.png)
 ![alt text](/images/github-marjun.png)
 
-The following image shows the threat actor have a access all about the server.<br>
-hxxps://domain[.]com/bk/index.php
+The following image shows the threat actor have a access all about the victim server.<br>
+`hxxps://domain[.]com/bk/index.php`
 
 ![alt text](/images/marijuana.png)
  
@@ -60,7 +60,7 @@ The `$GNJ` variable, decoded using a custom `“UHEX”` function, is used to re
 
 The web shell offers various features that attackers can exploit for different purposes, such as file manipulation (upload, rename, delete), command execution (e.g., `chmod`, `unzip`), and altering file timestamps
 
-One notable function is htmlspecialchars, used in conjunction with file-get-contents to read file contents. These functions allow the encoding of both the file path and name through GET requests, utilizing parameters like `d` (directory) and `s` (file name) to construct the request. This encoding obfuscates the request, making it harder for Cloudflare to detect and flag it as malicious
+One notable function is `htmlspecialchars`, used in conjunction with `file-get-contents` to read file contents. These functions allow the encoding of both the file path and name through GET requests, utilizing parameters like `d` (directory) and `s` (file name) to construct the request. This encoding obfuscates the request, making it harder for Cloudflare to detect and flag it as malicious
 
 ![alt text](/images/codes.png)
 
@@ -68,7 +68,7 @@ The logs provide clear artifacts that indicate the malicious activity
 
 ![alt text](/images/bk-log.png)
 
-To detect this type of malicious behavior, you can use tools like [CyberChef](https://gchq.github.io/) to decode the hexadecimal values. This helps reveal that the request is attempting to access the index.php file within the /home/[censored]/public_html/adv directory.
+To detect this type of malicious behavior, you can use tools like [CyberChef](https://gchq.github.io/) to decode the hexadecimal values. This helps reveal that the request is attempting to access the index.php file within the `/home/[domain]/public_html/adv directory`.
 
 ![alt text](/images/ascii-adv.png)
 
@@ -85,7 +85,7 @@ After a deeper analysis of `cache.php`, it became evident that this file is not 
 
 ![alt text](/images/codesszz.png)
 
-The User-Agent indicates that this is malware, and it includes an authentication key `(authkey)`.
+The `User-Agent` indicates that this is malware, and it includes an authentication key `(authkey)`.
 
 ![alt text](/images/coder.png)
 
@@ -110,7 +110,7 @@ To evade detection, the code undergoes three layers of obfuscation
 
 ![alt text](/images/flow-graph.png)
 
-Additionally, the `bk` folder contains malicious files that are created in every directory on the server. These files have been identified as part of the infection, leading to the creation of over 4,000 malicious files across the system
+Additionally, the <b>`bk`</b> folder contains malicious files that are created in every directory on the server. These files have been identified as part of the infection, leading to the creation of over 4,000 malicious files across the system
 
 ![alt text](/images/infected-files.png)
 
@@ -122,8 +122,10 @@ Upon analyzing the malicious files, I identified multiple defense evasion techni
 
 - Bypassing WAF <br>
 The shell has a <i>"stealth"</i> mode that allows it to bypass web application firewalls by encoding functions into hexadecimal to avoid detection.
+
 - Embedded Payloads<br>
 Malicious payloads embedded within the files.
+
 - Command Obfuscation<br>
 The use of obfuscation techniques to disguise and execute commands without triggering alarms.
 
