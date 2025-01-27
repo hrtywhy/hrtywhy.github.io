@@ -1,6 +1,6 @@
 ---
 layout:	post
-title:	"Backdoor Breakdowns Investigating the Marijuana"
+title:	"Uncovering the Marijuana PHP Backdoor: How It Evades Detection and Compromises Systems"
 date:	2025-01-23
 tags: Malware-Analysis
 image:  '/images/medium/marijuana.png'
@@ -15,9 +15,10 @@ The Marijuana PHP shell operates as a backdoor, granting threat actors initial a
 
 Once executed, the Marijuana PHP shell provides attackers with a browser-accessible interface, enabling comprehensive file management capabilities such as:
 
-Uploading and downloading files.
-Modifying file permissions.
-Viewing and editing server files.
+- Uploading and downloading files.
+- Modifying file permissions.
+- Viewing and editing server files.
+
 This functionality allows threat actors to establish persistence, gather sensitive information, and prepare for privilege escalation or further exploitation. Despite its potential impact, the PHP shell is designed to operate covertly without disrupting the website’s functionality, leaving website owners unaware of its presence until specific signs of compromise emerge.
 
 # Initial Access
