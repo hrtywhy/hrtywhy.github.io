@@ -122,10 +122,8 @@ Upon analyzing the malicious files, I identified multiple defense evasion techni
 
 - Bypassing WAF <br>
 The shell has a <i>"stealth"</i> mode that allows it to bypass web application firewalls by encoding functions into hexadecimal to avoid detection.
-
 - Embedded Payloads<br>
 Malicious payloads embedded within the files.
-
 - Command Obfuscation<br>
 The use of obfuscation techniques to disguise and execute commands without triggering alarms.
 
@@ -148,3 +146,7 @@ During the intrusion, no actions beyond data collection and reconnaissance were 
     - 172.70.135.75
     - 172.70.130.253
     - 63.141.247.162
+
+# Conclusion
+
+The Marijuana PHP Backdoor employs advanced evasion tactics, such as obfuscation, payload embedding, and WAF bypassing, making it a significant threat. To protect systems from such attacks, it's crucial to regularly patch vulnerabilities, particularly in PHP-based applications, and implement robust security configurations, such as proper input sanitization and WAF tuning. Additionally, swift identification of indicators and proactive incident response can greatly reduce the impact of these attacks. Staying vigilant and up-to-date with security best practices is essential to defending against similar threats.
