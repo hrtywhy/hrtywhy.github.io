@@ -37,7 +37,7 @@ The Marijuana PHP shell's creator maintains a GitHub repository that promotes it
 ![alt text](/images/github-marjun.png)
 
 The following image shows the threat actor have a access all about the victim server.<br>
-`hxxps://domain[.]com/bk/index.php`
+`hxxps://domain.com/bk/index.php`
 
 ![alt text](/images/marijuana.png)
  
@@ -145,11 +145,11 @@ During the intrusion, no actions beyond data collection and reconnaissance were 
 
 | IP address |
 |------------|
-| 162[.]158[.]78[.]254
-| 188[.]114[.]97[.]1
-| 172[.]70[.]135[.]75
-| 172[.]70[.]130[.]253
-| 63[.]141[.]247[.]162
+| 162.158.78.254
+| 188.114.97.1
+| 172.70.135.75
+| 172.70.130.253
+| 63.141.247.162
 
 # Conclusion
 
