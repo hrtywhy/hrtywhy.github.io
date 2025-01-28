@@ -139,15 +139,17 @@ During the intrusion, no actions beyond data collection and reconnaissance were 
 
 # Indicators
 
-- Domain: <br>
-    - hxxp://zs230[.]seboit[.]skin
+| Domains |
+|---------|
+| hxxp://zs230[.]seboit[.]skin
 
-- IP Addresses:
-    - 162.158.78.254
-    - 188.114.97.1
-    - 172.70.135.75
-    - 172.70.130.253
-    - 63.141.247.162
+| IP address |
+|------------|
+| 162[.]158[.]78[.]254
+| 188[.]114[.]97[.]1
+| 172[.]70[.]135[.]75
+| 172[.]70[.]130[.]253
+| 63[.]141[.]247[.]162
 
 # Conclusion
 
