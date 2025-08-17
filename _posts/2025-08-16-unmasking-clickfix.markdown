@@ -11,7 +11,7 @@ In the evolving world of cybersecurity threats, *ClickFix* is one of the cleares
 
 Unlike sophisticated zero-day exploits that target software flaws, ClickFix manipulates human trust in familiar web elements like CAPTCHAs, video conferencing login pages, and “Fix it” prompts. By mimicking familiar elements like CAPTCHAs and “Fix it” pop-ups, ClickFix tricks users into executing harmful code themselves.
 
-From late 2024 into 2025, security teams from various vendor or intelligence team like **Splunk**, **Darktrace**, **Unit42**, **Sekoia** or whatever have all documented the rise of ClickFix campaigns. These attacks have been observed delivering:
+From late 2024 into 2025, security teams from various vendor or intelligence team like Splunk, Darktrace**, Unit42, Sekoia or whatever have all documented the rise of ClickFix campaigns. These attacks have been observed delivering:
 
 - **Lumma Stealer** and other credential theft malware
 - **Remote Access Trojans (RATs)** for spying and persistence
@@ -33,8 +33,7 @@ These links direct victim to clicks a seemingly legitimate link to a **compromis
 
 ### **2. The Fake Verification**
 The site presents a believable interface — maybe a CAPTCHA with **“I’m not a robot”** or a fake **“Your meeting can’t start”** screen.
-
-A realistic-looking fake CAPTCHA or error message appears. It looks normal, but under the hood, it’s scripted to **silently copy** a hidden payload or command to the clipboard.
+<br>A realistic-looking fake CAPTCHA or error message appears. It looks normal, but under the hood, it’s scripted to **silently copy** a hidden payload or command to the clipboard.
 
 ### **3. The Instruction**
 The page then displays a message such as:
@@ -52,7 +51,7 @@ Depending on the campaign, this payload may:<br>
 - Deploy a RAT for long-term access
 - Execute ransomware to encrypt files and demand payment
 
-Nation-state actors such as Iran-linked MuddyWater and Russia-linked APT28 have adopted the ClickFix technique in their cyber espionage campaigns.
+Nation-state actors such as Iran-linked *MuddyWater* and Russia-linked *APT28* have adopted the ClickFix technique in their cyber espionage campaigns.
 
 # Why ClickFix Is So Effective
 
@@ -114,7 +113,6 @@ Nation-state actors such as Iran-linked MuddyWater and Russia-linked APT28 have 
 <br>Alert when clipboard activity is followed by suspicious process creation (e.g., browser → paste → `powershell.exe` or `mshta.exe`).
 
 **2. Script & LOLBIN Abuse**
-<br>
 - Monitor or block `.hta` file execution.
 - Flag `mshta.exe` or `powershell.exe` making outbound connections.
 - Detect **Base64-encoded PowerShell** or suspicious `IEX` (Invoke-Expression) usage.
@@ -149,17 +147,17 @@ Inspecting the registry write operation (RegSetValue), we find the entire PowerS
 - Some attackers avoid RunMRU exposure by instructing victims to use 
 <br> **Win+X → PowerShell/Command Prompt**.
 - Hunt for:
-    - **Event ID 4688 (Process Creation):
-    <br> ** `powershell.exe` spawned by `explorer.exe`.
-    - **Event ID 4663 (Object Access):
-    <br> ** file activity under `%LocalAppData%\Microsoft\Windows\WinX\`.
+    - **Event ID 4688 (Process Creation):**
+    <br>  `powershell.exe` spawned by `explorer.exe`.
+    - **Event ID 4663 (Object Access):**
+    <br> file activity under `%LocalAppData%\Microsoft\Windows\WinX\`.
     - Elevated PowerShell sessions shortly after login, followed by suspicious child processes 
     <br> (`certutil.exe`, `mshta.exe`, `rundll32.exe`).
     - Clipboard paste events correlated with PowerShell execution.
 
 # Threat Hunting ClickFix
 
-For the hunting on our environment, we must ensure we have the appropriate event logs from specified sources like command line auditing has been enabled and sysmon.
+For the hunting on our environment, we must ensure we have the appropriate event logs from specified sources like **command line auditing** has been enabled and **sysmon**.
 <br> One of the way to detect the activity, the following query can be used to hunt for suspicious PowerShell command strings
 
 **Suspicious PowerShell Parameter Substring Detected**
@@ -187,7 +185,7 @@ body="In the verification window, press <b>Ctrl</b>"
 
 ![image.png](/images/fofa.png)
 
-To validate those website indication with ClickFix we can use ClickGrab tools. ClickGrab Analyzer is a tool designed to identify and analyze websites that may be using FakeCAPTCHA or ClickFix techniques to distribute malware or steal information. It analyzes HTML content for potential threats like PowerShell commands, suspicious URLs, and clipboard manipulation code.
+To validate those website indication with ClickFix we can use [ClickGrab](https://clickgrab.streamlit.app/) tools. ClickGrab Analyzer is a tool designed to identify and analyze websites that may be using FakeCAPTCHA or ClickFix techniques to distribute malware or steal information. It analyzes HTML content for potential threats like PowerShell commands, suspicious URLs, and clipboard manipulation code.
 
 ![image.png](/images/clickgrab.png)
 
@@ -211,8 +209,8 @@ Show on image that website IEX to download malicious VBS
 
 # Conclusion: The Real Exploit Is Human Behavior
 
-ClickFix’s most dangerous payload isn’t code — it’s **psychology**. These campaigns succeed by exploiting habits, trust, and the instinct to follow “official-looking” instructions, turning the victim into an active participant in their own compromise.
+ClickFix’s most dangerous payload isn’t code but it’s **psychology**. These campaigns succeed by exploiting habits, trust, and the instinct to follow “official-looking” instructions, turning the victim into an active participant in their own compromise.
 
-Technical delivery is almost secondary; the human response is the true entry point. The strongest defense isn’t just better software — it’s awareness. If a site ever asks you to run or paste a command, **close it immediately**. No legitimate service will require that. The weakest link isn’t hardware — it’s human behavior
+Technical delivery is almost secondary; the human response is the true entry point. The strongest defense isn’t just better software but it’s awareness. If a site ever asks you to run or paste a command, **close it immediately**. No legitimate service will require that. The weakest link isn’t hardware  but it’s human behavior
 
 *Think before you click — and never paste what you didn’t type yourself.*
