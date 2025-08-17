@@ -81,63 +81,49 @@ pre.highlight {
   .il    { color: #099 } // Literal.Number.Integer.Long
 }
 
-/* Override default Rouge highlight */
-.highlight, pre.highlight, code, pre code {
-  background-color: #1e1e1e !important;  /* VSCode dark background */
-  color: #d4d4d4 !important;             /* default text */
-  border-radius: 8px;
+/* === Code block styling (VSCode Dark Theme) === */
+pre {
+  background: #1e1e1e;   /* background gelap ala VSCode */
+  color: #d4d4d4;        /* default text */
   padding: 1rem;
+  border-radius: 10px;
   overflow-x: auto;
-  font-family: "Fira Code", "Consolas", monospace;
-  font-size: 0.9rem;
+  font-size: 14px;
   line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Keywords */
-.highlight .k,
-.highlight .kd,
-.highlight .kn,
-.highlight .kp,
-.highlight .kr,
-.highlight .kt {
-  color: #569cd6 !important;
+pre code {
+  background: transparent;
+  font-family: "Fira Code", "Consolas", monospace;
+  color: inherit;
 }
 
-/* Strings */
-.highlight .s,
-.highlight .s1,
-.highlight .s2 {
-  color: #ce9178 !important;
-}
+/* Syntax highlight pakai class Rouge */
+code .k,   /* keyword */
+code .kd,  /* keyword declaration */
+code .kn { color: #569cd6; }
 
-/* Numbers */
-.highlight .m,
-.highlight .mf,
-.highlight .mh,
-.highlight .mi,
-.highlight .mo {
-  color: #b5cea8 !important;
-}
+code .s,   /* string */
+code .sb,
+code .s1,
+code .s2 { color: #ce9178; }
 
-/* Functions */
-.highlight .nf,
-.highlight .fm {
-  color: #dcdcaa !important;
-}
+code .n,   /* variable/identifier */
+code .nx,
+code .na { color: #9cdcfe; }
 
-/* Variables / identifiers */
-.highlight .nv,
-.highlight .vc,
-.highlight .vg,
-.highlight .vi {
-  color: #9cdcfe !important;
-}
+code .c,   /* comment */
+code .cm,
+code .c1,
+code .cs { color: #6a9955; font-style: italic; }
 
-/* Comments */
-.highlight .c,
-.highlight .cm,
-.highlight .c1,
-.highlight .cs {
-  color: #6a9955 !important;
-  font-style: italic;
-}
+code .o,   /* operator */
+code .p { color: #d4d4d4; }
+
+code .m,   /* numbers */
+code .mi,
+code .mf { color: #b5cea8; }
+
+code .nt { color: #4ec9b0; } /* function / tag */
+code .nf { color: #dcdcaa; } /* function name */
