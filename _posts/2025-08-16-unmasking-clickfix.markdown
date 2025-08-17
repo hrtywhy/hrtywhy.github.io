@@ -57,17 +57,17 @@ Nation-state actors such as Iran-linked MuddyWater and Russia-linked APT28 have 
 
 # Why ClickFix Is So Effective
 
-### Familiarity Breeds Trust
-Most users have seen CAPTCHAs and verification steps countless times. Attackers piggyback on this familiarity to lower suspicion.
+- **Familiarity Breeds Trust**
+<br>Most users have seen CAPTCHAs and verification steps countless times. Attackers piggyback on this familiarity to lower suspicion.
 
-### Low Technical Barrier for Attackers
-No advanced exploit is needed; just a convincing web page and social engineering.
+- **Low Technical Barrier for Attackers**
+<br>No advanced exploit is needed; just a convincing web page and social engineering.
 
-### Bypasses Many Security Tools
-Because the user initiates execution, security software may treat the action as “legitimate.”
+- **Bypasses Many Security Tools**
+<br>Because the user initiates execution, security software may treat the action as “legitimate.”
 
-### Leverages Built-in Windows Tools
-By abusing mshta and powershell, attackers blend malicious activity with normal system operations.
+- **Leverages Built-in Windows Tools**
+<br>By abusing mshta and powershell, attackers blend malicious activity with normal system operations.
 
 # Real Campaign Examples
 
@@ -75,13 +75,17 @@ By abusing mshta and powershell, attackers blend malicious activity with normal 
 
 ![image.png](/images/mega77.png)
 
-- **Fake Meeting Pages** — Victims were sent “Google Meet” or “Microsoft Teams” invites with instructions to verify their meeting by running a code used by Kimsuky (North Korea), MuddyWater (Iran), UNK_RemoteRogue, and APT28 (Russia).
+- **Fake Meeting Pages** 
+<br>Victims were sent “Google Meet” or “Microsoft Teams” invites with instructions to verify their meeting by running a code used by Kimsuky (North Korea), MuddyWater (Iran), UNK_RemoteRogue, and APT28 (Russia).
 
-- **Fake Browser Updates** — Malicious sites displayed “Update Required” pop-ups that copied a PowerShell one-liner to the clipboard used by SocGholish, BitRAT, Lumma Stealer, and FrigidStealer (macOS)
+- **Fake Browser Updates**
+<br>Malicious sites displayed “Update Required” pop-ups that copied a PowerShell one-liner to the clipboard used by SocGholish, BitRAT, Lumma Stealer, and FrigidStealer (macOS)
 
-- **Ransomware via HTA** — `.hta` payloads delivered *Epsilon Red* ransomware directly after execution.
+- **Ransomware via HTA** 
+<br> ```.hta``` payloads delivered *Epsilon Red* ransomware directly after execution.
 
-- **Cloudflare Bot Protection** — Another variation of the ClickFix technique is Cloudflare bot protection. Several phishing sites have been identified that imitate well-known brand sites, only to redirect users to a ClickFix page.
+- **Cloudflare Bot Protection**
+<br>Another variation of the ClickFix technique is Cloudflare bot protection. Several phishing sites have been identified that imitate well-known brand sites, only to redirect users to a ClickFix page.
 
 ![image.png](/images/twitch.png)
 
