@@ -23,9 +23,7 @@ It’s a reminder that **sometimes the attacker doesn’t need to break in — t
 ![alt text](/images/flow.png)
 
 ### **1. The Lure**
-
 The victim encounters a link through:
-
 - Phishing emails
 - Social media messages
 - Malicious advertisements (*malvertising*)
@@ -34,26 +32,21 @@ The victim encounters a link through:
 These links direct victim to clicks a seemingly legitimate link to a **compromised or attacker-controlled website**.
 
 ### **2. The Fake Verification**
-
-The site presents a believable interface — maybe a CAPTCHA with “I’m not a robot” or a fake “Your meeting can’t start” screen.
+The site presents a believable interface — maybe a CAPTCHA with **“I’m not a robot”** or a fake **“Your meeting can’t start”** screen.
 
 A realistic-looking fake CAPTCHA or error message appears. It looks normal, but under the hood, it’s scripted to **silently copy** a hidden payload or command to the clipboard.
 
 ### **3. The Instruction**
-
 The page then displays a message such as:
 
-> “Please press Windows + R, paste the code, and press Enter to continue.”
-> 
+ **“Please press Windows + R, paste the code, and press Enter to continue.”** 
 
 This instruction is crafted to feel urgent and routine and it will be copies a malicious command to the clipboard then the victim will run it.
 
 ### **4. The Execution**
-
 When the user pastes and runs the code, it triggers a **living-off-the-land binary (LOLBIN)** like `mshta.exe` or `powershell.exe` to fetch and execute the malware from a remote server.
 
 ### **5. The Payload**
-
 Depending on the campaign, this payload may:
 
 - Install a stealer to harvest credentials, crypto wallets, and browser data
@@ -63,20 +56,17 @@ Depending on the campaign, this payload may:
 Nation-state actors such as Iran-linked MuddyWater and Russia-linked APT28 have adopted the ClickFix technique in their cyber espionage campaigns.
 
 # Why ClickFix Is So Effective
-- **Familiarity Breeds Trust**
 
+- **Familiarity Breeds Trust**
 Most users have seen CAPTCHAs and login verification steps hundreds of times. The attacker piggybacks on this familiarity to lower suspicion.
 
 - **Low Technical Barrier for Attackers**
-
 No advanced exploit is needed — just a well-crafted web page and social engineering.
 
 - **Bypasses Many Security Tools**
-
 Security software often relies on detecting suspicious downloads or exploit patterns. With ClickFix, the user initiates the action, which can appear “legitimate” to the system.
 
 - **Leverages Legitimate Windows Tools**
-
 By using built-in executables (`mshta`, `powershell`), attackers bypass basic executable blocking and blend in with normal system operations.
 
 # Real Campaign Examples
@@ -86,12 +76,15 @@ By using built-in executables (`mshta`, `powershell`), attackers bypass basic ex
 ![image.png](/images/mega77.png)
 
 - **Fake Meeting Pages** — Victims were sent “Google Meet” or “Microsoft Teams” invites with instructions to verify their meeting by running a code used by Kimsuky (North Korea), MuddyWater (Iran), UNK_RemoteRogue, and APT28 (Russia).
+
 - **Fake Browser Updates** — Malicious sites displayed “Update Required” pop-ups that copied a PowerShell one-liner to the clipboard used by SocGholish, BitRAT, Lumma Stealer, and FrigidStealer (macOS)
+
+- **Ransomware via HTA** — `.hta` payloads delivered *Epsilon Red* ransomware directly after execution.
+
 - **Cloudflare Bot Protection** — Another variation of the ClickFix technique is Cloudflare bot protection. Several phishing sites have been identified that imitate well-known brand sites, only to redirect users to a ClickFix page.
 
 ![image.png](/images/twitch.png)
 
-- **Ransomware via HTA** — `.hta` payloads delivered *Epsilon Red* ransomware directly after execution.
 
 # ClickFix Mitigation & Detection
 
@@ -114,22 +107,18 @@ By using built-in executables (`mshta`, `powershell`), attackers bypass basic ex
 ### **Detection Opportunities**
 
 **1. Clipboard-to-Process Chains**
-
 - Alert when clipboard activity is followed by suspicious process creation (e.g., browser → paste → `powershell.exe` or `mshta.exe`).
 
 **2. Script & LOLBIN Abuse**
-
 - Monitor or block `.hta` file execution.
 - Flag `mshta.exe` or `powershell.exe` making outbound connections.
 - Detect **Base64-encoded PowerShell** or suspicious `IEX` (Invoke-Expression) usage.
 - Watch for AMSI bypass attempts containing strings like `AMSI_RESULT_NOT_DETECTED` (linked to Lumma Stealer and other ClickFix malware).
 
 **3. Web & Process Correlation**
-
 - Correlate visits to untrusted domains (e.g., fake updates or meeting sites) with new process launches.
 
 **4. RunMRU Artifacts**
-
 As a Digital Forensic and Incident Responder we can check on RunMRU. Windows maintains a registry key that stores the most recently executed commands from the Run window (Win + R), called RunMRU.
 - Monitor `RunMRU` registry entries:
 
