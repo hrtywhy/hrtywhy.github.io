@@ -57,17 +57,17 @@ Nation-state actors such as Iran-linked MuddyWater and Russia-linked APT28 have 
 
 # Why ClickFix Is So Effective
 
-- **Familiarity Breeds Trust**
-Most users have seen CAPTCHAs and login verification steps hundreds of times. The attacker piggybacks on this familiarity to lower suspicion.
+### Familiarity Breeds Trust
+Most users have seen CAPTCHAs and verification steps countless times. Attackers piggyback on this familiarity to lower suspicion.
 
-- **Low Technical Barrier for Attackers**
-No advanced exploit is needed — just a well-crafted web page and social engineering.
+### Low Technical Barrier for Attackers
+No advanced exploit is needed; just a convincing web page and social engineering.
 
-- **Bypasses Many Security Tools**
-Security software often relies on detecting suspicious downloads or exploit patterns. With ClickFix, the user initiates the action, which can appear “legitimate” to the system.
+### Bypasses Many Security Tools
+Because the user initiates execution, security software may treat the action as “legitimate.”
 
-- **Leverages Legitimate Windows Tools**
-By using built-in executables (`mshta`, `powershell`), attackers bypass basic executable blocking and blend in with normal system operations.
+### Leverages Built-in Windows Tools
+By abusing mshta and powershell, attackers blend malicious activity with normal system operations.
 
 # Real Campaign Examples
 
