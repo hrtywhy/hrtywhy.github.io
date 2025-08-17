@@ -162,7 +162,7 @@ For the hunting on our environment, we must ensure we have the appropriate event
 
 **Suspicious PowerShell Parameter Substring Detected**
 
-```powershell
+```yaml
 label="Process" label=Create      
 "process" IN ["*\powershell.exe", "*\pwsh.exe"]     
 command IN ["* -wi*h*", "* -nopr*", "* -nonin*", "* -ec*", "* -en*", "* -executionp*", "* -e* bypass*",
@@ -179,7 +179,7 @@ For more detections we can use [detection.ai](http://detection.ai) one of the be
 
 We can leverage FOFA, internet asset search engine that continuously scans the IPv4, IPv6, and domain space, indexes banners.  With these querry we can found malicious web indication with ClickFix in the wild.
 
-```powershell
+```yaml
 body="In the verification window, press <b>Ctrl</b>"
 ```
 
