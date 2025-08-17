@@ -113,7 +113,8 @@ Nation-state actors such as Iran-linked MuddyWater and Russia-linked APT28 have 
 **1. Clipboard-to-Process Chains**
 <br>Alert when clipboard activity is followed by suspicious process creation (e.g., browser → paste → `powershell.exe` or `mshta.exe`).
 
-**2. Script & LOLBIN Abuse**<br>
+**2. Script & LOLBIN Abuse**
+<br>
 - Monitor or block `.hta` file execution.
 - Flag `mshta.exe` or `powershell.exe` making outbound connections.
 - Detect **Base64-encoded PowerShell** or suspicious `IEX` (Invoke-Expression) usage.
