@@ -1,0 +1,8 @@
+/* Only style fenced code blocks */
+.highlight pre, pre.highlight, pre code {
+  background-color: #1e1e1e !important; /* dark gray */
+  color: #f8f8f2;                       /* light text */
+  border-radius: 8px;
+  padding: 12px;
+  overflow-x: auto;
+}
