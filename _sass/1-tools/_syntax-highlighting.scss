@@ -2,6 +2,16 @@
   Syntax Highlighting
 */
 
+// Custom tambahan
+pre.highlight {
+  border-radius: 10px;
+  background: #1e1e1e; // dark background
+  color: #ddd; 
+  padding: 1em;
+  overflow-x: auto;
+}
+
+
 .highlight {
   color: $text-color;
   background: $dark;

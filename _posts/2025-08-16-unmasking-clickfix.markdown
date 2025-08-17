@@ -163,11 +163,29 @@ For the hunting on our environment, we must ensure we have the appropriate event
 **Suspicious PowerShell Parameter Substring Detected**
 
 ```text
-label="Process" label=Create      
-"process" IN ["*\powershell.exe", "*\pwsh.exe"]     
-command IN ["* -wi*h*", "* -nopr*", "* -nonin*", "* -ec*", "* -en*", "* -executionp*", "* -e* bypass*",
-"* -sta *","*FromBase64String*", "*irm*iex*", "Invoke-RestMethod*Invoke-Expression*","*Convert-String*"]        
+label="Process" label=Create
+
+process IN [
+  "*\\powershell.exe",
+  "*\\pwsh.exe"
+]
+
+command IN [
+  "* -wi*h*",
+  "* -nop*",
+  "* -nonin*",
+  "* -ec*",
+  "* -en*",
+  "* -executionp*",
+  "* -e* bypass*",
+  "* -sta*",
+  "*FromBase64String*",
+  "*irm*iex*",
+  "Invoke-RestMethod*Invoke-Expression*",
+  "*Convert-String*"
+]
 ```
+
 
 For more detections we can use [detection.ai](http://detection.ai) one of the best community platform for detection engineering with specific ClickFix detections
 
