@@ -23,7 +23,7 @@ It’s a reminder that **sometimes the attacker doesn’t need to break in — t
 ![alt text](/images/flow.png)
 
 ### **1. The Lure**
-The victim encounters a link through:
+The victim encounters a link through:<br>
 - Phishing emails
 - Social media messages
 - Malicious advertisements (*malvertising*)
@@ -47,8 +47,7 @@ This instruction is crafted to feel urgent and routine and it will be copies a m
 When the user pastes and runs the code, it triggers a **living-off-the-land binary (LOLBIN)** like `mshta.exe` or `powershell.exe` to fetch and execute the malware from a remote server.
 
 ### **5. The Payload**
-Depending on the campaign, this payload may:
-
+Depending on the campaign, this payload may:<br>
 - Install a stealer to harvest credentials, crypto wallets, and browser data
 - Deploy a RAT for long-term access
 - Execute ransomware to encrypt files and demand payment
@@ -71,7 +70,8 @@ Nation-state actors such as Iran-linked MuddyWater and Russia-linked APT28 have 
 
 # Real Campaign Examples
 
-- **Fake reCAPTCHA** — This variant closely mirrors the look and functionality of the legitimate Google reCAPTCHA, making it highly convincing to internet users.
+- **Fake reCAPTCHA**
+<br>This variant closely mirrors the look and functionality of the legitimate Google reCAPTCHA, making it highly convincing to internet users.
 
 ![image.png](/images/mega77.png)
 
@@ -100,30 +100,30 @@ Nation-state actors such as Iran-linked MuddyWater and Russia-linked APT28 have 
 
 ### **User Protection & Awareness**
 
-- **Never paste or run commands you didn’t request** — treat unexpected prompts as malicious.
-- **Legitimate CAPTCHAs never require Windows commands**. Report any verification asking for **Win+R** usage.
+- Never paste or run commands you didn’t request. Treat unexpected prompts as malicious.
+- Legitimate CAPTCHAs never require Windows commands. Report any verification asking for **Win+R** usage.
 - Be cautious of **social engineering lures** such as:
     - Fake “urgent” browser update pop-ups.
     - Meeting invites that require scripts or command execution.
-- **Update OS, browsers, and security tools only from official sources**, not from pop-ups.
-- Use established **reporting procedures** for suspicious websites or prompts.
+- Update OS, browsers, and security tools only from official sources, not from pop-ups.
+- Use established reporting procedures for suspicious websites or prompts.
 
 ### **Detection Opportunities**
 
 **1. Clipboard-to-Process Chains**
-- Alert when clipboard activity is followed by suspicious process creation (e.g., browser → paste → `powershell.exe` or `mshta.exe`).
+<br>Alert when clipboard activity is followed by suspicious process creation (e.g., browser → paste → `powershell.exe` or `mshta.exe`).
 
-**2. Script & LOLBIN Abuse**
+**2. Script & LOLBIN Abuse**<br>
 - Monitor or block `.hta` file execution.
 - Flag `mshta.exe` or `powershell.exe` making outbound connections.
 - Detect **Base64-encoded PowerShell** or suspicious `IEX` (Invoke-Expression) usage.
 - Watch for AMSI bypass attempts containing strings like `AMSI_RESULT_NOT_DETECTED` (linked to Lumma Stealer and other ClickFix malware).
 
 **3. Web & Process Correlation**
-- Correlate visits to untrusted domains (e.g., fake updates or meeting sites) with new process launches.
+<br>Correlate visits to untrusted domains (e.g., fake updates or meeting sites) with new process launches.
 
 **4. RunMRU Artifacts**
-As a Digital Forensic and Incident Responder we can check on RunMRU. Windows maintains a registry key that stores the most recently executed commands from the Run window (Win + R), called RunMRU.
+<br>As a Digital Forensic and Incident Responder we can check on RunMRU. Windows maintains a registry key that stores the most recently executed commands from the **Run window (Win + R)**, called RunMRU.
 - Monitor `RunMRU` registry entries:
 
 ```
@@ -131,8 +131,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
 ```
 
 - RunMRU is not persistence, but a strong forensic indicator of ClickFix activity.
-
-With that in mind, let’s look at what a successful ClickFix attack looks like on an endpoint. We’ll start by opening the Run dialog (Windows + R) and pasting in a ClickFix command from earlier.
+<br>With that in mind, let’s look at what a successful ClickFix attack looks like on an endpoint. We’ll start by opening the Run dialog (Windows + R) and pasting in a ClickFix command from earlier.
 
 ![image.png](/images/win+r.png)
 
@@ -146,18 +145,21 @@ Inspecting the registry write operation (RegSetValue), we find the entire PowerS
 
 **5. Alternate Invocation (Win+X Abuse)**
 
-- Some attackers avoid RunMRU exposure by instructing victims to use **Win+X → PowerShell/Command Prompt**.
+- Some attackers avoid RunMRU exposure by instructing victims to use 
+<br> **Win+X → PowerShell/Command Prompt**.
 - Hunt for:
-    - **Event ID 4688 (Process Creation):** `powershell.exe` spawned by `explorer.exe`.
-    - **Event ID 4663 (Object Access):** file activity under `%LocalAppData%\Microsoft\Windows\WinX\`.
-    - Elevated PowerShell sessions shortly after login, followed by suspicious child processes (`certutil.exe`, `mshta.exe`, `rundll32.exe`).
+    - **Event ID 4688 (Process Creation):
+    <br> ** `powershell.exe` spawned by `explorer.exe`.
+    - **Event ID 4663 (Object Access):
+    <br> ** file activity under `%LocalAppData%\Microsoft\Windows\WinX\`.
+    - Elevated PowerShell sessions shortly after login, followed by suspicious child processes 
+    <br> (`certutil.exe`, `mshta.exe`, `rundll32.exe`).
     - Clipboard paste events correlated with PowerShell execution.
 
 # Threat Hunting ClickFix
 
 For the hunting on our environment, we must ensure we have the appropriate event logs from specified sources like command line auditing has been enabled and sysmon.
-
-One of the way to detect the activity, the following query can be used to hunt for suspicious PowerShell command strings
+<br> One of the way to detect the activity, the following query can be used to hunt for suspicious PowerShell command strings
 
 **Suspicious PowerShell Parameter Substring Detected**
 
