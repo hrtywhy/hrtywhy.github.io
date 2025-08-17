@@ -32,8 +32,7 @@ The victim encounters a link through:<br>
 These links direct victim to clicks a seemingly legitimate link to a **compromised or attacker-controlled website**.
 
 ### **2. The Fake Verification**
-The site presents a believable interface — maybe a CAPTCHA with **“I’m not a robot”** or a fake **“Your meeting can’t start”** screen.
-<br>A realistic-looking fake CAPTCHA or error message appears. It looks normal, but under the hood, it’s scripted to **silently copy** a hidden payload or command to the clipboard.
+The site presents a believable interface lik maybe a CAPTCHA with **“I’m not a robot”** or a fake **“Your meeting can’t start”** screen A realistic-looking fake CAPTCHA or error message appears. It looks normal, but under the hood, it’s scripted to **silently copy** a hidden payload or command to the clipboard.
 
 ### **3. The Instruction**
 The page then displays a message such as:
@@ -43,7 +42,8 @@ The page then displays a message such as:
 This instruction is crafted to feel urgent and routine and it will be copies a malicious command to the clipboard then the victim will run it.
 
 ### **4. The Execution**
-When the user pastes and runs the code, it triggers a **living-off-the-land binary (LOLBIN)** like `mshta.exe` or `powershell.exe` to fetch and execute the malware from a remote server.
+When the user pastes and runs the code, it triggers a **living-off-the-land binary (LOLBIN)** 
+like `mshta.exe` or `powershell.exe` to fetch and execute the malware from a remote server.
 
 ### **5. The Payload**
 Depending on the campaign, this payload may:<br>
