@@ -80,3 +80,22 @@ pre.highlight {
   .vi    { color: #008080 } // Name.Variable.Instance
   .il    { color: #099 } // Literal.Number.Integer.Long
 }
+
+/* Custom code block */
+pre, code {
+  font-family: "Fira Code", monospace;
+  background: #1e1e1e;
+  color: #e0e0e0;
+  border-radius: 8px;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+code {
+  padding: 0.2em 0.4em;
+}

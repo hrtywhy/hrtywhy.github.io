@@ -95,18 +95,3 @@
 @import '4-layouts/tags-page';
 /* >>>>>>>>>>>>>> :: 4.5-Contact Page <<<<<<<<<<<<<<< */
 @import '4-layouts/contact-page';
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #121212; // warna gelap biar full dark
-}
-
-.content {
-  max-width: 960px;   // biar lebar baca enak
-  margin: 2rem auto;  // auto = center
-  background: #1e1e1e; // kasih background gelap
-  padding: 2rem;
-  border-radius: 12px; // rounded
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3); // biar ada efek ngambang
-}
