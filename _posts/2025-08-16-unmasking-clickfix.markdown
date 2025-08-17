@@ -11,7 +11,7 @@ In the evolving world of cybersecurity threats, *ClickFix* is one of the cleares
 
 Unlike sophisticated zero-day exploits that target software flaws, ClickFix manipulates human trust in familiar web elements like CAPTCHAs, video conferencing login pages, and “Fix it” prompts. By mimicking familiar elements like CAPTCHAs and “Fix it” pop-ups, ClickFix tricks users into executing harmful code themselves.
 
-From late 2024 into 2025, security teams from various vendor or intelligence team like Splunk, Darktrace**, Unit42, Sekoia or whatever have all documented the rise of ClickFix campaigns. These attacks have been observed delivering:
+From late 2024 into 2025, security teams from various vendor or intelligence team like Splunk, Darktrace, Unit42, Sekoia or whatever have all documented the rise of ClickFix campaigns. These attacks have been observed delivering:
 
 - **Lumma Stealer** and other credential theft malware
 - **Remote Access Trojans (RATs)** for spying and persistence
