@@ -9,11 +9,11 @@ imagehero: true
 
 # Introduction
 
-Search has always been a battleground between defenders and attackers. For decades, threat actors have abused **search engine optimization (SEO)** to manipulate what users see in the top results. Now, with the arrival of **AI-powered search assistants like Google Gemini AI Overview**, the stakes have never been higher.
+Search has always been a battleground between defenders and attackers. For decades, threat actors have abused search engine optimization (SEO) to manipulate what users see in the top results. Now, with the arrival of **AI-powered search assistants like Google Gemini AI Overview**, the stakes have never been higher.
 
-I recently uncovered a campaign in Indonesia where attackers hijacked AI search results using **Black Hat SEO poisoning**. By flooding community websites with posts containing fraudulent customer service numbers, scammers trick users into calling fake helplines. Once connected, victims unknowingly hand over **sensitive personal or financial information**.
+I recently uncovered a campaign in Indonesia where attackers hijacked AI search results using **Black Hat SEO poisoning**. By flooding community websites with posts containing fraudulent customer service numbers, scammers trick users into calling fake helplines. Once connected, victims unknowingly hand over sensitive personal or financial information.
 
-What makes this campaign unique is its **integration with AI search**: poisoned results not only appear on Google’s traditional search, but also in Gemini’s AI-generated answers — where users are more likely to *trust* the content.
+What makes this campaign unique is its integration with AI search: poisoned results not only appear on Google’s traditional search, but also in Gemini’s AI-generated answers — where users are more likely to *trust* the content.
 
 # Key Takeaways
 
@@ -45,7 +45,7 @@ This ensures poisoned posts consistently rank in the **top 2–4 Google results*
 
 ### Luring Victims via Community Posts
 
-Once indexed, these poisoned results resemble **legitimate community Q&A threads**. A victim searching for loan cancellation instructions might land on a **forum post** where multiple accounts are “discussing” the issue.
+Once indexed, these poisoned results resemble legitimate community Q&A threads. A victim searching for loan cancellation instructions might land on a forum post where multiple accounts are “discussing” the issue.
 
 - **Fake engagement:** Dozens of replies from sockpuppet accounts reinforce credibility.
 - **Injected contact numbers:** Each thread prominently displays “customer service” phone numbers — which belong to scammers.
@@ -111,13 +111,13 @@ This suggests automation pipelines for scraping trending queries, generating spa
 
 ### Comparative Case: Badiis Malware SEO Poisoning
 
-The technique is not unique to scams. A **recent campaign uncovered by The Hacker News** described attackers using **SEO poisoning to distribute Badiis malware**.
+The technique is not unique to scams. A recent campaign uncovered by Unit42 described attackers using SEO poisoning to distribute Badiis malware.
 
 - **Same technique:** Black Hat SEO + poisoned results.
 - **Different objective:** Instead of scam numbers, victims were redirected to sites hosting **malicious installers**.
 - **Implication:** SEO poisoning is a *flexible delivery mechanism* that can be adapted for scams, malware, or phishing.
 
-This highlights a **convergence point**: AI search systems are becoming a *new battleground* for both financially motivated scammers and advanced malware operators.
+This highlights a convergence point: AI search systems are becoming a *new battleground* for both financially motivated scammers and advanced malware operators.
 
 # Why Indonesia? Attribution and Motives
 
@@ -180,6 +180,6 @@ Based on infrastructure overlap and tag analysis, these operations appear to be 
 
 # Conclusion
 
-SEO poisoning has existed for years, but the rise of **AI-powered search** changes the threat landscape. What was once a nuisance of shady websites has evolved into AI-amplified social engineering pipelines. Indonesian campaign shows how scammers weaponize community forums, fake phone numbers, and Black Hat SEO** to prey on users. 
+SEO poisoning has existed for years, but the rise of AI-powered search changes the threat landscape. What was once a nuisance of shady websites has evolved into AI-amplified social engineering pipelines. Indonesian campaign shows how scammers weaponize community forums, fake phone numbers, and Black Hat SEO** to prey on users. 
 
 The takeaway is clear: **trust in AI search must be earned, not assumed**. Without aggressive detection and smarter safeguards, Gemini and other AI search tools risk becoming the next frontier for cybercriminals.
