@@ -3,7 +3,7 @@ layout:	post
 title:	"Poisoning the Algorithm: How SEO Scams Exploit Google Gemini AI in Indonesia"
 date:	2025-09-20
 tags: Malware-Analysis
-image:  '/images/medium/ai.gif'
+image:  '/images/medium/eye.gif'
 imagehero: true
 ---
 
