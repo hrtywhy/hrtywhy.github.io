@@ -129,12 +129,12 @@ This highlights a convergence point: AI search systems are becoming a *new battl
 
 Indonesia has become a hotbed for SEO-poisoning scams due to several structural factors.
 
-![image.png](/images/get-contact.jpg)
+![image.png](/images/getcontact.jpg)
 
 To verify the authenticity and patterns of the scam numbers observed, we cross-referenced them against datasets where users label suspicious or fraudulent contacts. The validation confirmed that multiple numbers carried fraud-related tags such as *“penipu”* (scammer), *“tipu”* (fraud), or “*customer service*” impersonation. This suggests the numbers are not random but part of a coordinated campaign leveraging social engineering.
 
 
-![image.png](/images/tagging.jpg)
+![image.png](/images/tags.jpg)
 
 A closer look at tag distribution points to two distinct operational models:
 
