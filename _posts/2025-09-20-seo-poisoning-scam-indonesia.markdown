@@ -115,7 +115,12 @@ Analysis of the Frammer Community was carried out by scraping data from the past
 This suggests automation pipelines for scraping trending queries, generating spam posts, and inserting phone numbers en masse.
 ![image.png](/images/chart.png)
 
-### Comparative Case: Badiis Malware SEO Poisoning
+# Global Context
+These scams in Indonesia are not isolated. Internationally, the same SEO poisoning techniques have been used to distribute malware, such as the Badiis campaign reported in 2025. The difference lies in the payload: scams in Indonesia redirect to fraudulent numbers, while abroad, SEO poisoning pushes malicious installers. Same weapon, different target.
+
+This highlights how SEO poisoning is not bound by geography or attack type. It’s a flexible delivery mechanism that can be adapted for scams, phishing, or malware distribution.
+
+# Comparative Case: Badiis Malware SEO Poisoning
 
 The technique is not unique to scams. A recent campaign uncovered by Unit42 described attackers using SEO poisoning to distribute Badiis malware.
 
