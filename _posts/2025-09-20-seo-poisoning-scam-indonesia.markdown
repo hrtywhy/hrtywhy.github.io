@@ -25,7 +25,6 @@ What makes this campaign unique is its integration with AI search: poisoned resu
 
 # Technical Analysis
 ### Poisoning Search Rankings
-
 Attackers begin by identifying high-volume, high-intent queries often financial loan and service-related. Examples include:
 
 - Cara Membatalkan Pinjaman (*how to cancel a loan*)
@@ -34,10 +33,14 @@ Attackers begin by identifying high-volume, high-intent queries often financial 
 
 To hijack rankings, they deploy **Black Hat SEO tactics**:
 
-1. **Keyword Stuffing:** Injecting target keywords unnaturally across forum posts, replies, and page metadata.
-2. **Forum Spam:** Mass-posting across platforms such as **Frammer Community, Google Support, Spotify Community, and Forum Bardi**.
-3. **Link Farming:** Cross-linking posts from different spam accounts to inflate credibility.
-4. **Content Cloaking:** Using benign text for crawlers but inserting scam numbers for human readers.
+1. **Keyword Stuffing** 
+<br> Injecting target keywords unnaturally across forum posts, replies, and page metadata.
+2. **Forum Spam**
+<br> Mass-posting across platforms such as **Frammer Community, Google Support, Spotify Community, and Forum Bardi**.
+3. **Link Farming** 
+<br> Cross-linking posts from different spam accounts to inflate credibility.
+4. **Content Cloaking** 
+<br> Using benign text for crawlers but inserting scam numbers for human readers.
 
 This ensures poisoned posts consistently rank in the **top 2–4 Google results**, where user clicks are concentrated.
 
@@ -47,9 +50,12 @@ This ensures poisoned posts consistently rank in the **top 2–4 Google results*
 
 Once indexed, these poisoned results resemble legitimate community Q&A threads. A victim searching for loan cancellation instructions might land on a forum post where multiple accounts are “discussing” the issue.
 
-- **Fake engagement:** Dozens of replies from sockpuppet accounts reinforce credibility.
-- **Injected contact numbers:** Each thread prominently displays “customer service” phone numbers — which belong to scammers.
-- **Wide platform abuse:** The campaign spans multiple loan providers, including **Adakami, BTN, EasyCash, Kredit Cepat, Uangme, Lazbon and Gopay**.
+- **Fake engagement** 
+<br> Dozens of replies from sockpuppet accounts reinforce credibility.
+- **Injected contact numbers** 
+<br> Each thread prominently displays “customer service” phone numbers — which belong to scammers.
+- **Wide platform abuse** 
+<br> The campaign spans multiple loan providers, including **Adakami, BTN, EasyCash, Kredit Cepat, Uangme, Lazbon and Gopay**.
 
 The **illusion of consensus** (many users repeating the same number) dramatically increases trust.
 
@@ -65,7 +71,7 @@ Unlike malware campaigns, this scam relies on **voice-based social engineering**
 3. Victim is asked for loan IDs, KTP (Indonesian ID), or payment credentials.
 4. Data is monetized directly (via fraud).
 
-This pivot away from malware distribution reflects a low-cost, high-trust attack surface: no need to build payloads — only manipulate SEO and deploy social engineering.
+This pivot away from malware distribution reflects a low-cost, high-trust attack surface: no need to build payloads only manipulate SEO and deploy social engineering.
 
 
 ### Sentiment Analysis
@@ -98,7 +104,7 @@ Analysis of the Frammer Community was carried out by scraping data from the past
 | 085355042604 | 9 |
 | 085919153702| 7 |
 | 08154034985 | 4 |
-| 08999909_621 | 3
+| 08999909621 | 3
 | 082175221891 | 3
 | 0818834511 | 3
 | 0811333256 | 1
@@ -125,55 +131,49 @@ Indonesia has become a hotbed for SEO-poisoning scams due to several structural 
 
 ![image.png](/images/get-contact.jpg)
 
-To verify the authenticity and patterns of the scam numbers observed, we cross-referenced them against open-source datasets where users label suspicious or fraudulent contacts. The validation confirmed that multiple numbers carried fraud-related tags such as *“penipu”* (scammer), *“tipu”* (fraud), or “*customer service*” impersonation. This suggests the numbers are not random but part of a coordinated campaign leveraging social engineering.
+To verify the authenticity and patterns of the scam numbers observed, we cross-referenced them against datasets where users label suspicious or fraudulent contacts. The validation confirmed that multiple numbers carried fraud-related tags such as *“penipu”* (scammer), *“tipu”* (fraud), or “*customer service*” impersonation. This suggests the numbers are not random but part of a coordinated campaign leveraging social engineering.
 
 
 ![image.png](/images/tagging.jpg)
 
 A closer look at tag distribution points to two distinct operational models:
 
-- **Impersonation of customer support** — attackers pose as official representatives of lending platforms, deceiving victims into sharing sensitive information.
+- **Impersonation of customer support** 
+<br> Attackers pose as official representatives of lending platforms, deceiving victims into sharing sensitive information.
 
-- **Generic scam operations** — numbers associated with aliases, scam warnings, or derogatory labels (e.g., “Coky Habeahan” or “Wandi”), indicating the involvement of a broader scammer ecosystem rather than a single actor.
+- **Generic scam operations** 
+<br> Numbers associated with aliases, scam warnings, or derogatory labels (e.g., “*Coky Habeahan*” or *“Wandi”*), indicating the involvement of a broader scammer ecosystem rather than a single actor.
 
 This overlap shows how attackers recycle infrastructure, reusing the same phone numbers across campaigns while hiding behind multiple identities.
 
 ### 1. Unregulated Fintech Boom
-
 Online lending apps such as Adakami, Adapundi, Uangme, EasyCash, and others dominate Indonesia’s financial ecosystem. Many of these operate in a gray regulatory zone, creating fertile ground for impersonation and fraud.
 
 ### 2. AI-Powered Search Adoption
-
 With platforms like Google Gemini AI Overview being rolled out, attackers exploit growing trust in AI search outputs, poisoning them with maliciously-optimized results. Victims are directed toward fake “community” pages embedding scam numbers.
 
 ### 3. Digital Literacy Gaps
-
-A significant portion of Indonesian users perceive search results — and especially AI-generated summaries — as authoritative. This reduced skepticism increases their vulnerability to scam numbers masquerading as official hotlines.
+A significant portion of Indonesian users perceive search results and especially AI-generated summaries as authoritative. This reduced skepticism increases their vulnerability to scam numbers masquerading as official hotlines.
 
 ### 4. Low Barrier of Entry for Threat Actors
-
 Unlike malware campaigns, SEO poisoning and social engineering require minimal technical expertise. Local scammers or loosely organized groups can scale cheaply, reusing poisoned infrastructure for mass fraud.
 
 ### 5. Possible Actor Profiles
-
 Based on infrastructure overlap and tag analysis, these operations appear to be run by financially motivated local actors rather than sophisticated nation-state groups. Their emphasis is on volume-driven fraud rather than targeted espionage.
 
 
 # Recommendations
 
 ### For Users
-
 - **Verify contact numbers** only through official apps or websites.
 - **Cross-check AI answers** with direct provider sources.
 - **Be suspicious** of community forum numbers and “too helpful” posts.
 
 ### For Platforms
-
 - **Deploy SEO poisoning detection:** Identify suspicious keyword stuffing and repeated phone numbers in forums.
 - **Strengthen moderation:** Community platforms must invest in anti-spam systems that disrupt forum-based poisoning.
 
 ### For Enterprises
-
 - **Brand monitoring:** Track misuse of company names in community spam.
 - **Search visibility audits:** Ensure official numbers and support channels dominate search results.
 - **Threat intelligence sharing:** Collaborate across sectors to expose poisoned domains and scam numbers.
