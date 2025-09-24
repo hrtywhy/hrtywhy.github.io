@@ -7,228 +7,179 @@ image:  '/images/medium/eye.gif'
 imagehero: true
 ---
 
-In the evolving world of cybersecurity threats, *ClickFix* is one of the clearest examples of why people are often the weakest link in the security chain.
+# Introduction
 
-Unlike sophisticated zero-day exploits that target software flaws, ClickFix manipulates human trust in familiar web elements like CAPTCHAs, video conferencing login pages, and “Fix it” prompts. By mimicking familiar elements like CAPTCHAs and “Fix it” pop-ups, ClickFix tricks users into executing harmful code themselves.
+Search has always been a battleground between defenders and attackers. For decades, threat actors have abused **search engine optimization (SEO)** to manipulate what users see in the top results. Now, with the arrival of **AI-powered search assistants like Google Gemini AI Overview**, the stakes have never been higher.
 
-From late 2024 into 2025, security teams from various vendor or intelligence team like Splunk, Darktrace, Unit42, Sekoia or whatever have all documented the rise of ClickFix campaigns. These attacks have been observed delivering:
+I recently uncovered a campaign in Indonesia where attackers hijacked AI search results using **Black Hat SEO poisoning**. By flooding community websites with posts containing fraudulent customer service numbers, scammers trick users into calling fake helplines. Once connected, victims unknowingly hand over **sensitive personal or financial information**.
 
-- **Lumma Stealer** and other credential theft malware
-- **Remote Access Trojans (RATs)** for spying and persistence
-- **Ransomware** like *Epsilon Red*, delivered via malicious `.HTA` files
+What makes this campaign unique is its **integration with AI search**: poisoned results not only appear on Google’s traditional search, but also in Gemini’s AI-generated answers — where users are more likely to *trust* the content.
 
-It’s a reminder that **sometimes the attacker doesn’t need to break in — they just need you to open the door yourself**.
+# Key Takeaways
 
-# How ClickFix Actually Works?
-![alt text](/images/flow.png)
+- **SEO poisoning is evolving**: Black Hat SEO is being weaponized to target trending **AI-related keywords**.
+- **Community spam** is the delivery mechanism: attackers plant fraudulent content in **forums and knowledge-sharing sites**.
+- **Scam phone numbers** are the payload: instead of malware, the goal is to redirect victims into **social engineering traps**.
+- **AI amplifies poisoned content**: Google Gemini AI Overview can summarize or highlight malicious posts, giving them legitimacy.
+- **This mirrors malware campaigns** like the recent [Badiis SEO poisoning campaign](https://unit42.paloaltonetworks.com/operation-rewrite-seo-poisoning-campaign/) revealed by Unit42, which used the same tactic to distribute malicious installers instead of scam numbers.
 
-### **1. The Lure**
-The victim encounters a link through:<br>
-- Phishing emails
-- Social media messages
-- Malicious advertisements (*malvertising*)
-- SEO poisoning — malicious sites ranked highly for certain keywords
+# Technical Analysis
+### Poisoning Search Rankings
 
-These links direct victim to clicks a seemingly legitimate link to a **compromised or attacker-controlled website**.
+Attackers begin by identifying high-volume, high-intent queries often financial loan and service-related. Examples include:
 
-### **2. The Fake Verification**
-The site presents a believable interface lik maybe a CAPTCHA with **“I’m not a robot”** or a fake **“Your meeting can’t start”** screen A realistic-looking fake CAPTCHA or error message appears. It looks normal, but under the hood, it’s scripted to **silently copy** a hidden payload or command to the clipboard.
+- Cara Membatalkan Pinjaman (*how to cancel a loan*)
+- Spinjam
+- Batalkan Pinjaman
 
-### **3. The Instruction**
-The page then displays a message such as:
+To hijack rankings, they deploy **Black Hat SEO tactics**:
 
- **“Please press Windows + R, paste the code, and press Enter to continue.”** 
+1. **Keyword Stuffing:** Injecting target keywords unnaturally across forum posts, replies, and page metadata.
+2. **Forum Spam:** Mass-posting across platforms such as **Frammer Community, Google Support, Spotify Community, and Forum Bardi**.
+3. **Link Farming:** Cross-linking posts from different spam accounts to inflate credibility.
+4. **Content Cloaking:** Using benign text for crawlers but inserting scam numbers for human readers.
 
-This instruction is crafted to feel urgent and routine and it will be copies a malicious command to the clipboard then the victim will run it.
+This ensures poisoned posts consistently rank in the **top 2–4 Google results**, where user clicks are concentrated.
 
-### **4. The Execution**
-When the user pastes and runs the code, it triggers a **living-off-the-land binary (LOLBIN)** 
-like `mshta.exe` or `powershell.exe` to fetch and execute the malware from a remote server.
+![image.png](/images/tis.jpg)
 
-### **5. The Payload**
-Depending on the campaign, this payload may:<br>
-- Install a stealer to harvest credentials, crypto wallets, and browser data
-- Deploy a RAT for long-term access
-- Execute ransomware to encrypt files and demand payment
+### Luring Victims via Community Posts
 
-Nation-state actors such as Iran-linked *MuddyWater* and Russia-linked *APT28* have adopted the ClickFix technique in their cyber espionage campaigns.
+Once indexed, these poisoned results resemble **legitimate community Q&A threads**. A victim searching for loan cancellation instructions might land on a **forum post** where multiple accounts are “discussing” the issue.
 
-# Why ClickFix Is So Effective
+- **Fake engagement:** Dozens of replies from sockpuppet accounts reinforce credibility.
+- **Injected contact numbers:** Each thread prominently displays “customer service” phone numbers — which belong to scammers.
+- **Wide platform abuse:** The campaign spans multiple loan providers, including **Adakami, BTN, EasyCash, Kredit Cepat, Uangme, Lazbon and Gopay**.
 
-- **Familiarity Breeds Trust**
-<br>Most users have seen CAPTCHAs and verification steps countless times. Attackers piggyback on this familiarity to lower suspicion.
+The **illusion of consensus** (many users repeating the same number) dramatically increases trust.
 
-- **Low Technical Barrier for Attackers**
-<br>No advanced exploit is needed; just a convincing web page and social engineering.
+![image.png](/images/ai-overview.png)
 
-- **Bypasses Many Security Tools**
-<br>Because the user initiates execution, security software may treat the action as “legitimate.”
 
-- **Leverages Built-in Windows Tools**
-<br>By abusing mshta and powershell, attackers blend malicious activity with normal system operations.
+### The Social Engineering Payload
 
-# Real Campaign Examples
+Unlike malware campaigns, this scam relies on **voice-based social engineering**:
 
-- **Fake reCAPTCHA**
-<br>This variant closely mirrors the look and functionality of the legitimate Google reCAPTCHA, making it highly convincing to internet users.
+1. Victim dials the fraudulent number.
+2. A threat actor posing as a loan provider representative answers.
+3. Victim is asked for loan IDs, KTP (Indonesian ID), or payment credentials.
+4. Data is monetized directly (via fraud).
 
-![image.png](/images/mega77.png)
+This pivot away from malware distribution reflects a low-cost, high-trust attack surface: no need to build payloads — only manipulate SEO and deploy social engineering.
 
-- **Fake Meeting Pages** 
-<br>Victims were sent “Google Meet” or “Microsoft Teams” invites with instructions to verify their meeting by running a code used by Kimsuky (North Korea), MuddyWater (Iran), UNK_RemoteRogue, and APT28 (Russia).
 
-- **Fake Browser Updates**
-<br>Malicious sites displayed “Update Required” pop-ups that copied a PowerShell one-liner to the clipboard used by SocGholish, BitRAT, Lumma Stealer, and FrigidStealer (macOS)
+### Sentiment Analysis
 
-- **Ransomware via HTA** 
-<br> ```.hta``` payloads delivered *Epsilon Red* ransomware directly after execution.
+Analysis of the Frammer Community was carried out by scraping data from the past 14 days, starting from when this post appeared:
+- **Keyword frequency analysis** 
+<br> Revealed terms tied to financial distress queries (pinjaman, spinjam, shopee, membatalkan).
 
-- **Cloudflare Bot Protection**
-<br>Another variation of the ClickFix technique is Cloudflare bot protection. Several phishing sites have been identified that imitate well-known brand sites, only to redirect users to a ClickFix page.
+![image.png](/images/word-cloud.png)
 
-![image.png](/images/twitch.png)
+- **Account activity mapping**
+<br> Identified a small set of actors (e.g., *“Gaja*,” *“Jamur*,” *“Rem”* and *“Widia”*) responsible for dozens of posts.
 
 
-# ClickFix Mitigation & Detection
+| **User Action** | **Sum Post** |
+|---|---|
+| Gaja posted | 21 |
+| Jamur posted| 18 |
+| Jamur replied| 16 |
+| Widia replied| 13 |
+| Rem posted | 13 |
 
-### Mitigations **For Organizations**
+- **Phone number clustering**
+ <br> Highlighted repeat use of numbers such as *082118916821*, *082246435341*, and *+6283830504214*. The data was scraped using specific Indonesian-language scam-related keywords, then cleaned and processed with regex to achieve higher accuracy. This step was necessary because many contact numbers in the posts contained special characters (such as *+, -, ", or _*), so normalization was applied to ensure consistency in the phone number dataset.
 
-- Harden **PowerShell execution policies** and log encoded command usage.
-- Apply GPO restrictions to disable or limit **Windows+R** usage, reducing exposure to Run dialog abuse.
-- Restrict or block `wscript.exe` and `mshta.exe` using **AppLocker** or **Windows Defender Application Control (WDAC)**.
+| **User Action** | **Sum Post** |
+|---|---|
+| 082118916821 | 12 |
+| 082246435341 | 11 |
+| 085355042604 | 9 |
+| 085919153702| 7 |
+| 08154034985 | 4 |
+| 08999909_621 | 3
+| 082175221891 | 3
+| 0818834511 | 3
+| 0811333256 | 1
+| 083110610827 | 1
+| 083830504214 | 1
 
-### **User Protection & Awareness**
 
-- Never paste or run commands you didn’t request. Treat unexpected prompts as malicious.
-- Legitimate CAPTCHAs never require Windows commands. Report any verification asking for **Win+R** usage.
-- Be cautious of **social engineering lures** such as:
-    - Fake “urgent” browser update pop-ups.
-    - Meeting invites that require scripts or command execution.
-- Update OS, browsers, and security tools only from official sources, not from pop-ups.
-- Use established reporting procedures for suspicious websites or prompts.
+This suggests automation pipelines for scraping trending queries, generating spam posts, and inserting phone numbers en masse.
+![image.png](/images/chart.png)
 
-### **Detection Opportunities**
+### Comparative Case: Badiis Malware SEO Poisoning
 
-**1. Clipboard-to-Process Chains**
-<br>Alert when clipboard activity is followed by suspicious process creation (e.g., browser → paste → `powershell.exe` or `mshta.exe`).
+The technique is not unique to scams. A **recent campaign uncovered by The Hacker News** described attackers using **SEO poisoning to distribute Badiis malware**.
 
-**2. Script & LOLBIN Abuse**
-- Monitor or block `.hta` file execution.
-- Flag `mshta.exe` or `powershell.exe` making outbound connections.
-- Detect **Base64-encoded PowerShell** or suspicious `IEX` (Invoke-Expression) usage.
-- Watch for AMSI bypass attempts containing strings like `AMSI_RESULT_NOT_DETECTED` (linked to Lumma Stealer and other ClickFix malware).
+- **Same technique:** Black Hat SEO + poisoned results.
+- **Different objective:** Instead of scam numbers, victims were redirected to sites hosting **malicious installers**.
+- **Implication:** SEO poisoning is a *flexible delivery mechanism* that can be adapted for scams, malware, or phishing.
 
-**3. Web & Process Correlation**
-<br>Correlate visits to untrusted domains (e.g., fake updates or meeting sites) with new process launches.
+This highlights a **convergence point**: AI search systems are becoming a *new battleground* for both financially motivated scammers and advanced malware operators.
 
-**4. RunMRU Artifacts**
-<br>As a Digital Forensic and Incident Responder we can check on RunMRU. Windows maintains a registry key that stores the most recently executed commands from the **Run window (Win + R)**, called RunMRU.
-- Monitor `RunMRU` registry entries:
+# Why Indonesia? Attribution and Motives
 
-```
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
-```
+Indonesia has become a hotbed for SEO-poisoning scams due to several structural factors.
 
-- RunMRU is not persistence, but a strong forensic indicator of ClickFix activity.
-<br>With that in mind, let’s look at what a successful ClickFix attack looks like on an endpoint. We’ll start by opening the Run dialog (Windows + R) and pasting in a ClickFix command from earlier.
+![image.png](/images/get-contact.jpg)
 
-![image.png](/images/win+r.png)
+To verify the authenticity and patterns of the scam numbers observed, we cross-referenced them against open-source datasets where users label suspicious or fraudulent contacts. The validation confirmed that multiple numbers carried fraud-related tags such as *“penipu”* (scammer), *“tipu”* (fraud), or “*customer service*” impersonation. This suggests the numbers are not random but part of a coordinated campaign leveraging social engineering.
 
-The execution of the command is tracked using Process Monitor
 
-![image.png](/images/procmon-clickfix.png)
+![image.png](/images/tagging.jpg)
 
-Inspecting the registry write operation (RegSetValue), we find the entire PowerShell command is written to the RunMRU registry key.
+A closer look at tag distribution points to two distinct operational models:
 
-![image.png](/images/runmru.png)
+- **Impersonation of customer support** — attackers pose as official representatives of lending platforms, deceiving victims into sharing sensitive information.
 
-**5. Alternate Invocation (Win+X Abuse)**
+- **Generic scam operations** — numbers associated with aliases, scam warnings, or derogatory labels (e.g., “Coky Habeahan” or “Wandi”), indicating the involvement of a broader scammer ecosystem rather than a single actor.
 
-- Some attackers avoid RunMRU exposure by instructing victims to use 
-<br> **Win+X → PowerShell/Command Prompt**.
-- Hunt for:
-    - **Event ID 4688 (Process Creation):**
-    <br>  `powershell.exe` spawned by `explorer.exe`.
-    - **Event ID 4663 (Object Access):**
-    <br> file activity under `%LocalAppData%\Microsoft\Windows\WinX\`.
-    - Elevated PowerShell sessions shortly after login, followed by suspicious child processes 
-    <br> (`certutil.exe`, `mshta.exe`, `rundll32.exe`).
-    - Clipboard paste events correlated with PowerShell execution.
+This overlap shows how attackers recycle infrastructure, reusing the same phone numbers across campaigns while hiding behind multiple identities.
 
-# Threat Hunting ClickFix
+### 1. Unregulated Fintech Boom
 
-For the hunting on our environment, we must ensure we have the appropriate event logs from specified sources like **command line auditing** has been enabled and **sysmon**.
-<br> One of the way to detect the activity, the following query can be used to hunt for suspicious PowerShell command strings
+Online lending apps such as Adakami, Adapundi, Uangme, EasyCash, and others dominate Indonesia’s financial ecosystem. Many of these operate in a gray regulatory zone, creating fertile ground for impersonation and fraud.
 
-**Suspicious PowerShell Parameter Substring Detected**
+### 2. AI-Powered Search Adoption
 
-```sql
-label="Process" label=Create
+With platforms like Google Gemini AI Overview being rolled out, attackers exploit growing trust in AI search outputs, poisoning them with maliciously-optimized results. Victims are directed toward fake “community” pages embedding scam numbers.
 
-process IN [
-  "*\\powershell.exe",
-  "*\\pwsh.exe"
-]
+### 3. Digital Literacy Gaps
 
-command IN [
-  "* -wi*h*",
-  "* -nop*",
-  "* -nonin*",
-  "* -ec*",
-  "* -en*",
-  "* -executionp*",
-  "* -e* bypass*",
-  "* -sta*",
-  "*FromBase64String*",
-  "*irm*iex*",
-  "Invoke-RestMethod*Invoke-Expression*",
-  "*Convert-String*"
-]
-```
+A significant portion of Indonesian users perceive search results — and especially AI-generated summaries — as authoritative. This reduced skepticism increases their vulnerability to scam numbers masquerading as official hotlines.
 
+### 4. Low Barrier of Entry for Threat Actors
 
-For more detections we can use [detection.ai](http://detection.ai) one of the best community platform for detection engineering with specific ClickFix detections
+Unlike malware campaigns, SEO poisoning and social engineering require minimal technical expertise. Local scammers or loosely organized groups can scale cheaply, reusing poisoned infrastructure for mass fraud.
 
-![image.png](/images/detectionsai.png)
-![image.png](/images/detectionsaii.png)
-![image.png](/images/detections-ai.png)
+### 5. Possible Actor Profiles
 
-# Hunting ClickFix Infrastructure
+Based on infrastructure overlap and tag analysis, these operations appear to be run by financially motivated local actors rather than sophisticated nation-state groups. Their emphasis is on volume-driven fraud rather than targeted espionage.
 
-We can leverage FOFA, internet asset search engine that continuously scans the IPv4, IPv6, and domain space, indexes banners.  With these querry we can found malicious web indication with ClickFix in the wild.
 
-```sql
-body="In the verification window, press <b>Ctrl</b>"
-```
+# Recommendations
 
-![image.png](/images/fofa.png)
+### For Users
 
-To validate those website indication with ClickFix we can use [ClickGrab](https://clickgrab.streamlit.app/) tools. ClickGrab Analyzer is a tool designed to identify and analyze websites that may be using FakeCAPTCHA or ClickFix techniques to distribute malware or steal information. It analyzes HTML content for potential threats like PowerShell commands, suspicious URLs, and clipboard manipulation code.
+- **Verify contact numbers** only through official apps or websites.
+- **Cross-check AI answers** with direct provider sources.
+- **Be suspicious** of community forum numbers and “too helpful” posts.
 
-![image.png](/images/clickgrab.png)
+### For Platforms
 
-![image.png](/images/clickgrab-analysis.png)
+- **Deploy SEO poisoning detection:** Identify suspicious keyword stuffing and repeated phone numbers in forums.
+- **Strengthen moderation:** Community platforms must invest in anti-spam systems that disrupt forum-based poisoning.
 
-We can checked the detail like the URLs, IP Address, Powershell Command and Obfuscated Javascript etc
+### For Enterprises
 
-![image.png](/images/clickgrab-detail.png)
+- **Brand monitoring:** Track misuse of company names in community spam.
+- **Search visibility audits:** Ensure official numbers and support channels dominate search results.
+- **Threat intelligence sharing:** Collaborate across sectors to expose poisoned domains and scam numbers.
 
-Another way we can checked manually by visiting the website
+# Conclusion
 
-![image.png](/images/sindangkasihnews.png)
+SEO poisoning has existed for years, but the rise of **AI-powered search** changes the threat landscape. What was once a nuisance of shady websites has evolved into AI-amplified social engineering pipelines. Indonesian campaign shows how scammers weaponize community forums, fake phone numbers, and Black Hat SEO** to prey on users. 
 
-or the others website we can check on FOFA
-
-![image.png](/images/capazmente.png)
-
-![image.png](/images/threat-score.png)
-
-Show on image that website IEX to download malicious VBS 
-
-# Conclusion: The Real Exploit Is Human Behavior
-
-ClickFix’s most dangerous payload isn’t code but it’s **psychology**. These campaigns succeed by exploiting habits, trust, and the instinct to follow “official-looking” instructions, turning the victim into an active participant in their own compromise.
-
-Technical delivery is almost secondary; the human response is the true entry point. The strongest defense isn’t just better software but it’s awareness. If a site ever asks you to run or paste a command, **close it immediately**. No legitimate service will require that. The weakest link isn’t hardware  but it’s human behavior
-
-*Think before you click — and never paste what you didn’t type yourself.*
+The takeaway is clear: **trust in AI search must be earned, not assumed**. Without aggressive detection and smarter safeguards, Gemini and other AI search tools risk becoming the next frontier for cybercriminals.
