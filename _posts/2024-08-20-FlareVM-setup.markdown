@@ -112,9 +112,12 @@ Disable ASLR
 
 # 2. Analyzing Malicious Documents
 ## Microsoft Office Format Notes
-`OLE2 Format` (.doc, .xls, etc.): Binary; can store older macro versions in SRP streams.
-`OOXML Format (.docx, .xlsm, etc.): ZIP-compressed; VBA inside OLE2 binary within ZIP.
+- `OLE2 Format` (.doc, .xls, etc.)
+
+- `OOXML Format` (.docx, .xlsm, etc.)
+
 `XLM Macros`: Excel formulas, even without binary OLE2 stream.
+
 `RTF`: No macros, but supports embedded malicious objects.
 
 ## Risky Windows API Calls
