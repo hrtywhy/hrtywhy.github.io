@@ -1,13 +1,43 @@
 ---
 layout:	post
-title:	"Creating an Isolated Lab Environment for Malware Analysis & Reverse Engineering"
+title:	"Malware Analysis & Reverse Engineering Cheat Sheet"
 date:	2024-08-20
 tags: Malware-Analysis
 image: '/images/medium/3.png'
 imagehero: true
 ---
 
-Welcome to my guide on creating a local sandbox an isolated lab environment for malware analysis and reverse engineering. This step-by-step tutorial covers VirtualBox setup, creating Windows-10 VM, FLARE-VM configuration and network isolation. With clear instructions and screenshots, you’ll have a secure environment for honing your cybersecurity skills and analyzing malware effectively.
+M cheat sheet for building a local, isolated sandbox for malware analysis and reverse engineering. This concise guide walks you through setting up with Windows 10 VM, installing and configuring FLARE-VM, and applying network isolation best practices. With step-by-step instructions and screenshots, you'll have a secure lab to practice malware analysis and improve your reverse-engineering skills.
+
+# Malware Analysis Process
+## Behavioural Analysis
+- Use virtualisation tools for system snapshots:
+`Clonezilla`, `PXE`, `FOG`
+- Monitor local interactions:
+`Process Hacker`, `Process Monitor`, `ProcDOT`, `Noriben`
+- Detect system changes:
+`RegShot`, `Autoruns`
+- Monitor network traffic:
+`Wireshark`, `Fiddler`
+- Redirect traffic:
+`fakedns`, `accept-all-ips`
+- Simulate services:
+`INetSim` or `actual service setup`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - Download and Install Virtual Box:
 [VirtualBox Download Link](https://www.virtualbox.org/wiki/Downloads)
