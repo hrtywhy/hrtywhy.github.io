@@ -158,8 +158,8 @@ Web traffic
 - Use Windows 10 from the official website:
 [Windows ISO Download Link](https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise)
 
-First things firt
-1. Disable Windows Update
+
+- Disable Windows Update
 
 go to *services.msc*
 
@@ -167,7 +167,7 @@ go to *services.msc*
 
 ![Screenshot 2024-08-19 231414](https://github.com/user-attachments/assets/f3dae957-9095-48d1-9dea-05c38f96be1c)
 
-2. Disable Windows Defender
+- Disable Windows Defender
 
 ![Screenshot 2024-08-19 231627](https://github.com/user-attachments/assets/e7639b08-47e6-4f50-9c71-9fb94dc5eb37)
 
@@ -185,11 +185,11 @@ Set the same things for Microsoft Defender Antivirus
 
 Dont forget to reboot!
 
-3. Show Hidden Files and Folders
+- Show Hidden Files and Folders
   
 ![Screenshot 2024-08-19 233722](https://github.com/user-attachments/assets/0a73f5e4-2206-4f81-9e20-1c8f3e44ba5c)
 
-4. Create a snapshot
+- Create a snapshot
 
 FLARE-VM is a purpose-built virtual machine created & maintained by FireEye, a cybersecurity company. It comes pre-configured with a variety of tools, software, and scripts commonly used for malware analysis and reverse engineering tasks. These tools include disassemblers, debuggers, memory analysis tools, and various utilities for analyzing and dissecting malware samples.
 
