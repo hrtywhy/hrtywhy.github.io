@@ -7,7 +7,7 @@ image: '/images/medium/3.png'
 imagehero: true
 ---
 
-M cheat sheet for building a local, isolated sandbox for malware analysis and reverse engineering. This concise guide walks you through setting up with Windows 10 VM, installing and configuring FLARE-VM, and applying network isolation best practices. With step-by-step instructions and screenshots, you'll have a secure lab to practice malware analysis and improve your reverse-engineering skills.
+Cheat sheet for building a local, isolated sandbox for malware analysis and reverse engineering. This concise guide walks you through setting up with Windows 10 VM, installing and configuring FLARE-VM, and applying network isolation best practices. With step-by-step instructions and screenshots, you'll have a secure lab to practice malware analysis and improve your reverse-engineering skills.
 
 # 1. Malware Analysis Process
 
