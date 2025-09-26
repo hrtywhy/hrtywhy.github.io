@@ -198,7 +198,8 @@ FLARE-VM is a purpose-built virtual machine created & maintained by FireEye, a c
 - Download and Install [FlareGitHub Repo](https://github.com/mandiant/flare-vm) or we can use scripting to fastest our way with this [install.ps1](https://github.com/mandiant/flare-vm/blob/main/install.ps1)
 
 Before you run the ps.1 please read carefully the documentaion such as
-<br> ```Unblock-File .\install.ps1``` and <br> ```Set-ExecutionPolicy Unrestricted -Force``` and then you can execute the installer ```.\install.ps1```
+<br> ```Unblock-File .\install.ps1``` and <br> ```Set-ExecutionPolicy Unrestricted -Force``` 
+<br> and then you can execute the installer ```.\install.ps1```
 
 - Change network adapter to `Host-Only` 🖥️
 
