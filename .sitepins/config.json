@@ -1,0 +1,17 @@
+{
+  "media": {
+    "root": "images",
+    "public": "images"
+  },
+  "content": {
+    "root": "blog"
+  },
+  "code": {
+    "root": "_posts"
+  },
+  "themeConfig": [
+    "_config.yml"
+  ],
+  "arrangement": [],
+  "showCommitModal": false
+}
