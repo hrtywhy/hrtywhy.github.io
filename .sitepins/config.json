@@ -4,10 +4,10 @@
     "public": "images"
   },
   "content": {
-    "root": "blog"
+    "root": "_posts"
   },
   "code": {
-    "root": "_posts"
+    "root": ""
   },
   "themeConfig": [
     "_config.yml"
